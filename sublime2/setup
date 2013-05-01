@@ -1,0 +1,14 @@
+#!/bin/sh
+
+# Setup ST2 to use dotfiles
+
+sublime_dir=~/Library/Application\ Support/Sublime\ Text\ 2/Packages
+mv "$sublime_dir/User" "$sublime_dir/User.backup"
+ln -s "$DOTFILES/sublime2/User" "$sublime_dir"
+
+theme_dir="$sublime_dir/Theme - Nil"
+if ! [ -d $theme_dir ]
+then
+  cd $sublime_dir
+  git clone https://github.com/joshua/st2-nil-theme "Theme - Nil"
+done

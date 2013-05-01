@@ -1,0 +1,77 @@
+# remap prefix to Control + g
+set -g prefix C-a
+unbind C-b
+bind C-a send-prefix
+
+# setw -g mode-keys vi
+
+# Act like vim for selecting panes
+bind h select-pane -L
+bind j select-pane -D
+bind k select-pane -U
+bind l select-pane -R
+
+# Set term color properly
+set -g default-terminal "screen-256color"
+
+# Enable mouse support
+set-window-option -g mode-mouse on
+set-option -g mouse-select-pane on
+set-option -g mouse-resize-pane on
+set-option -g mouse-select-window on
+
+# Scrollback buffer size increase
+set -g history-limit 500000
+
+# C-a C-a will swap the last used window
+bind-key C-a last-window
+
+# Start tab numbering at 1
+set -g base-index 1
+set -g pane-base-index 1
+
+# Allows for faster key repetition
+set -s escape-time 0
+
+# Highlight active window
+set-window-option -g window-status-current-bg red
+set-window-option -g window-status-current-fg white
+
+# Use different keys to split vertical and horizontal
+bind | split-window -h
+bind - split-window -v
+
+# Don't automatically rename the window
+# One of these has to work
+set-window-option -g automatic-rename off
+set-option -g automatic-rename off
+setw -g automatic-rename off
+set -g automatic-rename off
+
+# Don't prompt to kill panes/windows
+bind-key x kill-pane
+bind-key & kill-window
+
+# Reload tmux conf
+unbind r
+bind r source-file ~/.tmux.conf; display "Reloaded conf."
+
+
+# Status
+set -g status-position top
+set -g status-left-length 32
+set -g status-right-length 150
+
+set -g status-fg blue
+set -g status-bg black
+set -g window-status-activity-attr bold
+set -g pane-border-fg brightgreen
+set -g pane-active-border-fg brightgreen
+set -g message-fg yellow
+set -g message-bg black
+set -g message-attr bold
+
+set -g status-left '#[fg=brightwhite,bg=blue,bold] ❐ #S #[fg=blue,bg=brightyellow,nobold]⮀#[fg=blue,bg=brightyellow,bold] #(whoami) #[fg=brightyellow,bg=black,nobold]⮀'
+set -g window-status-format "#[fg=yellow,bg=black] #I #W "
+set -g window-status-current-format "#[fg=black,bg=yellow]⮀#[fg=black,bg=yellow,noreverse,bold] #I ⮁ #W #[fg=yellow,bg=black,nobold]⮀"
+set -g status-right "#(wemux status_users)"
