@@ -29,7 +29,7 @@ fi
 
 # Load ZSH module first
 for file ($DOTFILES/zsh/*.zsh(N)); do
-  source $config_file
+  source $file
 done
 
 # all zsh files
