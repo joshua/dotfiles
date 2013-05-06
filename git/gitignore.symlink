@@ -1,5 +1,10 @@
 .DS_Store
-.svn
-*~
+.DS_Store?
+.Spotlight-V100
+.Trashes
+._*
+Icon?
+Thumbs.db
+ehthumbs.db
 *.swp
-*.rbc
+*.swo
