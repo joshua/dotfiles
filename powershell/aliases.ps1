@@ -17,6 +17,10 @@ function stt { subl . $args}
 #
 function cdst { Set-Location \Projects\Stratus }
 
+function cdm { Set-Location Z:\ }
+function cdmj { Set-Location Z:\Josh }
+function cdmd { Set-Location Z:\Developer }
+function cdms { Set-Location Z:\Developer\ACS\Stratus }
 
 #
 # Sanity
@@ -36,6 +40,8 @@ Set-Alias gs _git_status
 function _git_diff { git diff $args }
 Set-Alias gd _git_diff
 
+function _gitk { gitk --all }
+Set-Alias gk _gitk
 
 #
 # Edit Profile
