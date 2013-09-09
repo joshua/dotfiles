@@ -26,6 +26,7 @@ function cdms { Set-Location Z:\Developer\ACS\Stratus }
 # Sanity
 #
 Set-Alias ll Get-ChildItem
+Set-Alias open Invoke-Item
 
 function touch { Set-Content -Path ($args[0]) -Value ($null) }
 
