@@ -1,7 +1,5 @@
-# Load PoshGit shell prompt
-# Currently bundled with GitHub for Windows
-#
-# TODO: Bundle PoshGit with dotfiles
-#
+# Load GitHub for Windows environment
 . (Resolve-Path "$env:LOCALAPPDATA\GitHub\shell.ps1")
-. $env:github_posh_git\profile.example.ps1
+
+# Load PoshGit shell prompt
+. (Resolve-Path "$DOTFILES\powershell\posh-git\profile.example.ps1")
