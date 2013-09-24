@@ -1,0 +1,128 @@
+#!/bin/bash
+#
+# fdemessage
+# Joshua Suggs / @joshsuggs
+#
+# Updates or retrieves the Full Disk Encryption (FileValue) Recovery Message
+# for Mac OS X. This message will be displayed on the FDE pre-boot screen,
+# login window and the lock screen.
+#
+# Example:
+#
+#    fdemessage set "If this Mac is found, please call 123-123-1234"
+#
+# Requires that Full Disk Encryption (FileVault) be enabled on the root drive.
+#
+# Extracted from puppet-osx, for those not using Boxen.
+#   See: http://git.io/cWSzOg
+#
+
+
+KEXTDIR=/System/Library/Extensions
+EFICACHEDIR=/System/Library/Caches/com.apple.corestorage/EFILoginLocalizations
+LOGINWINDOWPLIST=/Library/Preferences/com.apple.loginwindow.plist
+NVRAMVAR=good-samaritan-message
+
+
+#
+# Check if FDE is enabled.
+#
+check_fde () {
+  /usr/bin/sudo -p "Checking if FDE is enabled, password for sudo:" \
+    /usr/bin/fdesetup isactive /
+
+  if [ $? -eq 1 ]; then
+    echo "[Error] Full Disk Encryption is not enabled for the root drive."
+    echo -e
+    exit 1
+  fi
+}
+
+
+#
+# Check if a message has been set.
+#
+get_message () {
+  local message=$(/usr/bin/defaults read $LOGINWINDOWPLIST LoginwindowText 2>/dev/null)
+
+  if [ -z $message ]; then
+    echo "No recovery message has been set."
+  else
+    echo "Recovery message: $message"
+  fi
+}
+
+
+#
+# Set the recovery message
+#
+# The login window and lock screen use the LOGINWINDOWPLIST value.
+# The FDE pre-boot screen uses the NVRAM variable, since the file system
+# hasn't been decrypted yet.
+#
+set_message () {
+
+  # Set the LoginWindows preferences
+  /usr/bin/sudo -p "Setting LoginWindow preferences, password for sudo: " \
+    /usr/bin/defaults write $LOGINWINDOWPLIST LoginwindowText "$1"
+
+  # Set the Recovery Message NVRAM variable
+  local checkvar=$(/usr/sbin/nvram $NVRAMVAR 2>/dev/null | /usr/bin/awk -F'\t' '{ print $2 }' | /usr/bin/grep -q "^$1$")$?
+
+  if [ $checkvar -eq 1 ]; then
+    /usr/bin/sudo -p "Setting NVRAM variable, password for sudo: " \
+      /usr/sbin/nvram good-samaritan-message="$1"
+  fi
+
+  # Refresh CS kext cache with new message
+  refresh_cache
+
+  echo "Set Recovery Message: \"$1\""
+}
+
+# The CoreStorage kext cache needs to be updated so the recovery message
+# is displayed on the FDE pre-boot screen.
+#
+# The CS cache can be updated directly by touching $EFICACHEDIR, if it exists.
+# Otherwise you will need to touch $KEXTDIR to generate it.}
+refresh_cache () {
+  local directory=$KEXTDIR
+
+  if [[ $(test -d $EFICACHEDIR) -eq 0 ]]; then
+    directory=$EFICACHEDIR
+  fi
+
+  /usr/bin/sudo -p "Updating CoreStorage kext cache, password for sudo: " \
+    /usr/bin/touch $directory
+}
+
+
+# Check if FDE is enabled, first.
+check_fde
+
+
+#
+# Parse command
+#
+case "$1" in
+  check|get)
+    get_message
+    ;;
+  set)
+    if [[ -z "$2" ]]; then
+      echo -e "[Error] A recovery message is required. \n"
+      echo "Usage: fdemessage set \"Recovery message\""
+    else
+      set_message "$2"
+    fi
+    ;;
+  refresh|update)
+    refresh_cache
+    ;;
+  *)
+    echo $"Usage: fdemessage check|get|set|refresh"
+    exit 1
+esac
+
+
+echo -e
