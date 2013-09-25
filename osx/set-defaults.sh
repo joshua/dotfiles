@@ -384,6 +384,13 @@ defaults write com.apple.appstore WebKitDeveloperExtras -bool true
 defaults write com.apple.appstore ShowDebugMenu -bool true
 
 ###############################################################################
+# Developer                                                                   #
+###############################################################################
+
+# Make FileMerge diff binary plist files
+defaults write com.apple.FileMerge Filters -array-add '{ Apply = 0; Display = 0; Extension = plist; Filter = "/usr/bin/plutil -convert xml1 -o -  \$(FILE)"; }'
+
+###############################################################################
 # Kill affected applications                                                  #
 ###############################################################################
 

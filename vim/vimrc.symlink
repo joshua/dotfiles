@@ -1,0 +1,6 @@
+syntax on
+
+" Wrap gitcommit file types at the appropriate length
+filetype indent plugin on
+
+cmap w!! %!sudo tee > /dev/null %
