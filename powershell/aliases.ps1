@@ -15,7 +15,8 @@ function stt { subl . $args}
 #
 # Project shortcuts
 #
-function cdst { Set-Location \Projects\Stratus }
+function cdst { Set-Location \Projects\Realm\Stratus }
+function cdr { Set-Location \Projects\Realm }
 
 function cdm { Set-Location Z:\ }
 function cdmj { Set-Location Z:\Josh }
