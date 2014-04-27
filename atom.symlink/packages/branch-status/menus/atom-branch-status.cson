@@ -1,0 +1,16 @@
+# See https://atom.io/docs/latest/creating-a-package#menus for more details
+'context-menu':
+  '.overlayer':
+      'Enable atom-branch-status': 'atom-branch-status:toggle'
+
+'menu': [
+  {
+    'label': 'Packages'
+    'submenu': [
+      'label': 'Branch Status'
+      'submenu': [
+        { 'label': 'Update', 'command': 'atom-branch-status:toggle' }
+      ]
+    ]
+  }
+]

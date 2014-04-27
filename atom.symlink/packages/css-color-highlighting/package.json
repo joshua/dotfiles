@@ -1,0 +1,37 @@
+{
+  "name": "css-color-highlighting",
+  "main": "./lib/color-highlighting",
+  "version": "0.2.4",
+  "author": {
+    "name": "Petr Brzek",
+    "email": "petrbrzek@abdoc.net"
+  },
+  "contributors": [
+    {
+      "name": "Jan Sedivy",
+      "email": "jansedivy@abdoc.net"
+    }
+  ],
+  "description": "Highlight colors in CSS files",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/madebysource/atom-color-highlighting"
+  },
+  "license": "MIT",
+  "engines": {
+    "atom": ">0.50.0"
+  },
+  "dependencies": {},
+  "readme": "#Atom Color Highlighting plugin\n\n![Color Highlighting](http://f.cl.ly/items/3p2w2k3w2v0y1G320s1K/Screen%20Shot%202014-02-28%20at%2019.25.22.png)\n\n## How to get it\n\n```bash\napm install css-color-highlighting\n```\n\n## Features:\n* Highlighting color values like black, blue or #bada55\n* Adjusting the text contrast to background\n* It works with:\n  * CSS: Hex, W3C colors, RGB(a), HSL(a)\n  * LESS: HEX, W3C colors, RGB(a)\n  * SASS/SCSS: HEX, W3C colors, RGB\n\n## Roadmap\n* Better HSL(A) and RGBA support\n* Menu item and Keybindings\n* Color Picker\n",
+  "readmeFilename": "README.md",
+  "bugs": {
+    "url": "https://github.com/madebysource/atom-color-highlighting/issues"
+  },
+  "homepage": "https://github.com/madebysource/atom-color-highlighting",
+  "_id": "css-color-highlighting@0.2.4",
+  "dist": {
+    "shasum": "ffa0131d35af0db23ae16810c7ea20116420d0de"
+  },
+  "_resolved": "/var/folders/8b/6ky0h1n11qn_n52jpnsy03m40000gq/T/d-114218-17529-1ngi3f6/package.tgz",
+  "_from": "/var/folders/8b/6ky0h1n11qn_n52jpnsy03m40000gq/T/d-114218-17529-1ngi3f6/package.tgz"
+}

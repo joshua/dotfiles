@@ -1,0 +1,32 @@
+{
+  "name": "language-csharp",
+  "version": "0.1.3",
+  "private": true,
+  "description": "C# language support for Atom",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/atom/language-csharp"
+  },
+  "keywords": [
+    "C#",
+    "csharp",
+    ".Net"
+  ],
+  "license": "MIT",
+  "engines": {
+    "atom": ">0.50.0"
+  },
+  "dependencies": {},
+  "readme": "# C# language support in Atom\n\nAdds syntax highlighting and snippets to C# files in Atom.\n\nOriginally [converted](http://atom.io/docs/latest/converting-a-text-mate-bundle)\nfrom the [C# TextMate bundle](https://github.com/wintermi/csharp-tmbundle).\n\nContributions are greatly appreciated. Please fork this repository and open a\npull request to add snippets, make grammar tweaks, etc.\n",
+  "readmeFilename": "README.md",
+  "bugs": {
+    "url": "https://github.com/atom/language-csharp/issues"
+  },
+  "homepage": "https://github.com/atom/language-csharp",
+  "_id": "language-csharp@0.1.3",
+  "dist": {
+    "shasum": "04a93fa8c293dff6bf903e4579237d19751d7072"
+  },
+  "_resolved": "/var/folders/8b/6ky0h1n11qn_n52jpnsy03m40000gq/T/d-114228-31186-1fjx2w1/package.tgz",
+  "_from": "/var/folders/8b/6ky0h1n11qn_n52jpnsy03m40000gq/T/d-114228-31186-1fjx2w1/package.tgz"
+}

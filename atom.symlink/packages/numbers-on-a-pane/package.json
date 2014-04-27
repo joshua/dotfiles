@@ -1,0 +1,27 @@
+{
+  "name": "numbers-on-a-pane",
+  "main": "./lib/numbers-on-a-pane",
+  "version": "0.1.0",
+  "description": "Display numbers on each pane for faster cmd-(1..9) jumping",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/maprinz/numbers-on-a-pane"
+  },
+  "license": "MIT",
+  "engines": {
+    "atom": ">0.50.0"
+  },
+  "dependencies": {},
+  "readme": "# numbers-on-a-pane package\n\nOh no! There are ... wait for it ... Numbers on A Pane!\nYou could always use CMD + (1..9) to jump to a specific pane, but now you know where you're landing when you got a bunch of panes opened.\n\n## Before: What's the shortcut to go there?\n![](http://i.imgur.com/vHbrm93.png)\n\n## Now: BOOM! I'm there.\n![](http://i.imgur.com/vlf2Hyu.png)\n",
+  "readmeFilename": "README.md",
+  "bugs": {
+    "url": "https://github.com/maprinz/numbers-on-a-pane/issues"
+  },
+  "homepage": "https://github.com/maprinz/numbers-on-a-pane",
+  "_id": "numbers-on-a-pane@0.1.0",
+  "dist": {
+    "shasum": "d7f3e00763117782102c12000544e8c8641cdac7"
+  },
+  "_resolved": "/var/folders/8b/6ky0h1n11qn_n52jpnsy03m40000gq/T/d-11431-37534-1cxnnst/package.tgz",
+  "_from": "/var/folders/8b/6ky0h1n11qn_n52jpnsy03m40000gq/T/d-11431-37534-1cxnnst/package.tgz"
+}

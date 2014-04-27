@@ -1,0 +1,16 @@
+# See https://atom.io/docs/latest/creating-a-package#menus for more details
+'context-menu':
+  '.overlayer':
+      'Enable Numbers On A Pane': 'numbers-on-a-pane:toggle'
+
+'menu': [
+  {
+    'label': 'Packages'
+    'submenu': [
+      'label': 'Numbers On A Pane'
+      'submenu': [
+        { 'label': 'Toggle', 'command': 'numbers-on-a-pane:toggle' }
+      ]
+    ]
+  }
+]

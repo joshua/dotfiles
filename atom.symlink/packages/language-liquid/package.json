@@ -1,0 +1,27 @@
+{
+  "name": "language-liquid",
+  "version": "0.2.0",
+  "private": true,
+  "description": "Liquid language support for Atom.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kieranmasterton/language-liquid"
+  },
+  "license": "MIT",
+  "engines": {
+    "atom": ">0.50.0"
+  },
+  "dependencies": {},
+  "readme": "# language-liquid package\n\nLiquid language support for Atom.\n",
+  "readmeFilename": "README.md",
+  "bugs": {
+    "url": "https://github.com/kieranmasterton/language-liquid/issues"
+  },
+  "homepage": "https://github.com/kieranmasterton/language-liquid",
+  "_id": "language-liquid@0.2.0",
+  "dist": {
+    "shasum": "d959c89d74e794a3ebe7a69bd4b56bfb40157b77"
+  },
+  "_resolved": "/var/folders/8b/6ky0h1n11qn_n52jpnsy03m40000gq/T/d-114218-18400-14u56px/package.tgz",
+  "_from": "/var/folders/8b/6ky0h1n11qn_n52jpnsy03m40000gq/T/d-114218-18400-14u56px/package.tgz"
+}

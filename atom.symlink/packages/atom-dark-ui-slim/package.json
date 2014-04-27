@@ -1,0 +1,26 @@
+{
+  "name": "atom-dark-ui-slim",
+  "theme": "ui",
+  "version": "0.3.2",
+  "description": "A slim version of atom-dark-ui",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/moonsspoon/atom-dark-ui-slim"
+  },
+  "engines": {
+    "atom": ">0.40.0"
+  },
+  "readme": "# Atom Dark UI Slim theme\n\n * Slim tree-view\n * Slim tabs\n\n##### with apm do:\n```\napm install atom-dark-ui-slim\n```\n\n\n## Slim Theme\n![Preview Image](https://f.cloud.github.com/assets/848347/2278351/b5605cac-9f52-11e3-95d2-33e9f634b384.png)\n\n## Original Theme\n![Original Theme](https://f.cloud.github.com/assets/848347/2278371/21730980-9f53-11e3-89f3-0e15d34dbff3.png)\n",
+  "readmeFilename": "README.md",
+  "bugs": {
+    "url": "https://github.com/moonsspoon/atom-dark-ui-slim/issues"
+  },
+  "homepage": "https://github.com/moonsspoon/atom-dark-ui-slim",
+  "_id": "atom-dark-ui-slim@0.3.2",
+  "dist": {
+    "shasum": "d015991a4c67bdc8b2d87ff71c6eb31e0e84c1d3"
+  },
+  "_resolved": "/var/folders/8b/6ky0h1n11qn_n52jpnsy03m40000gq/T/d-114218-18645-17i4jto/package.tgz",
+  "_from": "/var/folders/8b/6ky0h1n11qn_n52jpnsy03m40000gq/T/d-114218-18645-17i4jto/package.tgz"
+}
