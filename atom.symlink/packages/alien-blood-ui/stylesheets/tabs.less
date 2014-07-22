@@ -1,0 +1,110 @@
+@import "ui-variables";
+@tab-radius: 0px;
+@tab-skew: 30deg;
+@tab-top-padding: 0px;
+@tab-border: 1px solid @tab-border-color;
+
+.tab-bar {
+  height: @tab-height;
+  background: @tab-bar-background-color;
+  box-shadow: none;
+  box-sizing: border-box;
+
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0px;
+    width: 100%;
+    background-color: @tab-background-color;
+    border-bottom: @tab-border;
+  }
+
+  .tab {
+    position: relative;
+    top: @tab-top-padding;
+    height: @tab-height;
+    line-height: @tab-height - 6px;
+    color: @text-color;
+    border-right: @tab-border;
+    font-size: 12px;
+    border-top: 6px solid @tab-border-color;
+
+    &, &:before {
+      background-color: @tab-background-color-inactive;
+    }
+
+    &:before {
+      content: "";
+      position: absolute;
+      line-height: @tab-height - 6px;
+      width: 0px;
+    }
+
+    .close-icon {
+      top: 0;
+      &:hover {
+        &:before {
+          color: @text-color-selected;
+        }
+      }
+    }
+
+    .title {
+      padding-left: 5px;
+      position: relative;
+    }
+
+    &:first-child {
+      padding-left: 10px;
+    }
+  }
+
+  .tab.active {
+    line-height: @tab-height - 6px;
+    color: @text-color-highlight;
+
+    &, &:before {
+      background-color: @tab-background-color-active;
+      height: @tab-height
+    }
+
+    .title {
+      padding-left: 5px;
+      position: relative;
+    }
+  }
+
+  .tab.active:hover, .tab:hover {
+    background-color: @tab-background-color-hover;
+    color: @text-color-highlight;
+  }
+
+  .tab.modified, .tab.modified:not(:hover) {
+    color: @text-color-modified;
+    .close-icon {
+      top: 0;
+      right: 10px;
+      width: 12px;
+      height: 12px;
+      border: none;
+      &:before {
+        color: @text-color-modified;
+        content: "\f052";
+      }
+    }
+    .close-icon:hover {
+      &:before {
+        color: @text-color-selected;
+        content: "\f081";
+      }
+    }
+  }
+
+  .placeholder {
+    height: @tab-height;
+    &:after {
+      top: @tab-height;
+    }
+  }
+}

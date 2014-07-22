@@ -4,6 +4,7 @@ atom.symlink/.node-gyp
 atom.symlink/.storage
 atom.symlink/compile-cache
 atom.symlink/storage
+atom.symlink/themes
 
 git/gitconfig.symlink
 sublime2/User/Package Control.last-run

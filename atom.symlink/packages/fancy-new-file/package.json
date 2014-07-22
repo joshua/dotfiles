@@ -1,7 +1,7 @@
 {
   "name": "fancy-new-file",
   "main": "./lib/fancy-new-file-view",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "description": "Create files and directories by typing a relative path.",
   "activationEvents": [
     "fancy-new-file:toggle"
@@ -23,10 +23,10 @@
     "url": "https://github.com/rev087/fancy-new-file/issues"
   },
   "homepage": "https://github.com/rev087/fancy-new-file",
-  "_id": "fancy-new-file@0.6.0",
+  "_id": "fancy-new-file@0.7.0",
   "dist": {
-    "shasum": "35731542ff48194fb4a3255a252c688bda5cb078"
+    "shasum": "72fbdc5a7719f1649c8bec3669d9aeb36918b1f8"
   },
-  "_resolved": "/var/folders/8b/6ky0h1n11qn_n52jpnsy03m40000gq/T/d-114224-29215-1vbw986/package.tgz",
-  "_from": "/var/folders/8b/6ky0h1n11qn_n52jpnsy03m40000gq/T/d-114224-29215-1vbw986/package.tgz"
+  "_resolved": "/var/folders/32/qx8y3py13_gb8qmkyrf5vzkw0000gn/T/d-114415-48234-1opvx8e/package.tgz",
+  "_from": "/var/folders/32/qx8y3py13_gb8qmkyrf5vzkw0000gn/T/d-114415-48234-1opvx8e/package.tgz"
 }

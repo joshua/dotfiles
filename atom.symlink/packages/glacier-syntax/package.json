@@ -1,0 +1,26 @@
+{
+  "name": "glacier-syntax",
+  "theme": "syntax",
+  "version": "0.0.4",
+  "description": "Glacier Syntax for Atom.io is a theme inspired by @joeyfigaro's Glacier for Sublime.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mattgraham/glacier-syntax-atom"
+  },
+  "license": "MIT",
+  "engines": {
+    "atom": ">0.50.0"
+  },
+  "bugs": {
+    "url": "https://github.com/mattgraham/glacier-syntax-atom/issues"
+  },
+  "readme": "# Glacier UI for Atom\n\nGlacier Syntax **work in progress theme** for Atom.io is a theme inspired by @joeyfigaro's Glacier for Sublime\n\n![Image](http://f.cl.ly/items/1s2U3f3E1z240j1K133a/Image%202014-04-03%20at%201.15.25%20PM.png)\n\n## Install\n\nOpen Atom Preferences, select Themes > Search for `Glacier-Syntax-Theme`,\nthen Install.\n\n*You may need to reload Atom `Cmd+R` in between these steps.*\n\nActivate the theme by selecting the Themes section of Preferences.\n\n\n## Contributing\n\nIf you find what you would consider a bug:\n\n- Check out the issues on GitHub to see if anyone else has reported the same issue.\n- If you don't see anything, create an issue with information on how to reproduce it.\n\nIf you want to contribute an enhancement or a fix:\n\n- Fork the project on GitHub.\n- Make your changes.\n- Commit the changes without making changes to any other files that aren't related to your enhancement or fix.\n- Send a pull request. \n\nFor anything else find me on twitter via [@michigangraham](http://twitter.com/michigangraham)\n",
+  "readmeFilename": "README.md",
+  "homepage": "https://github.com/mattgraham/glacier-syntax-atom",
+  "_id": "glacier-syntax@0.0.4",
+  "dist": {
+    "shasum": "7075311240fa028a0ba2e0997861751c1c377ccd"
+  },
+  "_resolved": "/var/folders/32/qx8y3py13_gb8qmkyrf5vzkw0000gn/T/d-114327-26841-1mv4hln/package.tgz",
+  "_from": "/var/folders/32/qx8y3py13_gb8qmkyrf5vzkw0000gn/T/d-114327-26841-1mv4hln/package.tgz"
+}

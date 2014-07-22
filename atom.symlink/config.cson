@@ -1,21 +1,23 @@
 'editor':
-  'fontSize': 11
+  'fontSize': 12
   'fontFamily': 'Source Code Pro'
   'showIndentGuide': true
   'showInvisibles': true
 'core':
   'themes': [
     'atom-dark-ui-slim'
-    'bespin-soft-syntax'
+    'base16-tomorrow-dark-theme'
   ]
   'disabledPackages': [
     'Rdio'
     'branch-status'
+    'numbers-on-a-pane'
+    'atom-lint'
   ]
 'exception-reporting':
   'userId': 'e5fe7d71-bb44-6812-3d58-7bfd7a11ce57'
 'release-notes':
-  'viewedVersion': '0.92.0'
+  'viewedVersion': '0.95.0'
 'welcome':
   'showOnStartup': false
 'metrics':

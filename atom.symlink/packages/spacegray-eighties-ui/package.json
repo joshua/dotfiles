@@ -1,7 +1,7 @@
 {
   "name": "spacegray-eighties-ui",
   "theme": "ui",
-  "version": "0.5.0",
+  "version": "0.7.0",
   "description": "Port of the Spacegray Eighties (http://kkga.github.io/spacegray) Sublime Text theme to Atom",
   "license": "MIT",
   "repository": {
@@ -11,16 +11,16 @@
   "engines": {
     "atom": ">0.50.0"
   },
-  "readme": "# Spacegray Eighties UI theme\n\nPort of the [Spacegray Eighties](http://kkga.github.io/spacegray) Sublime Text theme to Atom.\nDesigned with the Base16 Tomorrow Dark syntax theme in mind.\n\nCredit to  [cannikin's original port](https://github.com/cannikin/spacegray-dark-ui).\n\n![screenshot](https://s3-us-west-2.amazonaws.com/emilyemorehouse/spacegrayeighties)\n",
+  "readme": "# Spacegray Eighties UI theme\n\nPort of the [Spacegray Eighties](http://kkga.github.io/spacegray) Sublime Text theme to Atom.\nUI Theme to match base16 Eighties Syntax (http://chriskempson.github.io/base16/#eighties). \n\nIf these colors aren't to your liking, [check out my other packages!](https://atom.io/users/emilyemorehouse)\nOr make a request.\n\n\nCredit to  [cannikin's original port](https://github.com/cannikin/spacegray-dark-ui).\n\n![screenshot](https://s3-us-west-2.amazonaws.com/emilyemorehouse/spacegrayeighties)\n",
   "readmeFilename": "README.md",
   "bugs": {
     "url": "https://github.com/emilyemorehouse/spacegray-eighties-ui/issues"
   },
   "homepage": "https://github.com/emilyemorehouse/spacegray-eighties-ui",
-  "_id": "spacegray-eighties-ui@0.5.0",
+  "_id": "spacegray-eighties-ui@0.7.0",
   "dist": {
-    "shasum": "bc8575090c2f02726eaf96fa77fe053a4bbb498b"
+    "shasum": "d13560612bf66ebf4cf6e6ba23b790ee8325f043"
   },
-  "_resolved": "/var/folders/8b/6ky0h1n11qn_n52jpnsy03m40000gq/T/d-114224-29251-1m6s8uc/package.tgz",
-  "_from": "/var/folders/8b/6ky0h1n11qn_n52jpnsy03m40000gq/T/d-114224-29251-1m6s8uc/package.tgz"
+  "_resolved": "/var/folders/32/qx8y3py13_gb8qmkyrf5vzkw0000gn/T/d-114415-48258-18ayzml/package.tgz",
+  "_from": "/var/folders/32/qx8y3py13_gb8qmkyrf5vzkw0000gn/T/d-114415-48258-18ayzml/package.tgz"
 }

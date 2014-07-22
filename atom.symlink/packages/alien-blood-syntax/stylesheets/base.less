@@ -1,0 +1,369 @@
+@import "syntax-variables";
+
+.editor .editor-colors {
+    color: @syntax-text-color;
+    background-color: @syntax-background-color;
+}
+
+.gutter {
+    color: @syntax-gutter-text-color;
+    background-color: @syntax-gutter-background-color;
+}
+
+.editor .wrap-guide {
+    color: @syntax-wrap-guide-color;
+}
+
+.editor .indent-guide {
+    color: @syntax-indent-guide-color;
+}
+
+.editor .invisible-character {
+    color: @syntax-invisible-character-color;
+}
+
+.editor .search-results .marker .region {
+    border: @syntax-result-marker-color;
+    background-color: transparent;
+}
+
+.editor .search-results .marker.current-result .region {
+    border: @syntax-result-marker-color-selected;
+}
+
+.editor.is-focused .cursor {
+    border-color: @syntax-cursor-color;
+}
+
+.editor.is-focused .selection .region {
+    background-color: @syntax-selection-color;
+}
+
+.meta.class.body, .meta.method.body, .meta.method, .meta.method-call {
+    color: @white;
+}
+
+.variable.parameter.function {
+    text-decoration: underline;
+
+    color: @green;
+}
+
+.comment, .punctuation.definition.comment {
+    color: @grey;
+}
+
+.punctuation.definition.string, .punctuation.definition.variable, .punctuation.definition.string, .punctuation.definition.parameters, .punctuation.definition.array, .punctuation.definition.tag, .punctuation.definition.method-parameters {
+    color: @white;
+}
+
+.punctuation.definition.seperator.key-value, .punctuation.terminator {
+    color: @bright-blue;
+}
+
+.punctuation.definition.structure {
+    color: @bright-green;
+}
+
+.none {
+    color: @white;
+}
+
+.keyword.operator {
+    color: @white;
+}
+
+.keyword, .keyword.control {
+    color: @white;
+}
+
+.variable, .meta.definition.variable.name {
+    color: @green;
+}
+
+.entity.name.function, .meta.require {
+    color: @bright-green;
+}
+
+.meta.class, .support.class, .entity.name.class, .entity.name.type.class, .storage.type, .storage.type, .entity.other.inherited-class {
+    color: @bright-green;
+}
+
+span.storage.modifier.static.groovy + span, span.storage.type.def.groovy + span, span.storage.type.groovy + span {
+  .meta.method.groovy {
+    color: @bright-green;
+  }
+}
+
+span.meta.method-call.groovy {
+    color: @green;
+}
+
+.storage.type.annotation {
+  color: @bright-white;
+}
+
+.keyword.other.special-method {
+  color: @white;
+}
+
+.storage, .storage.type.def {
+  color: @magenta;
+}
+
+.storage.modifier.import, .storage.modifier.package {
+  color: @white;
+}
+
+.support.function {
+  color: @cyan;
+}
+
+.string, .punctuation.definition.string {
+  color: @bright-yellow;
+  background-color: @true-black;
+}
+
+.constant.numeric {
+  color: @bright-magenta;
+}
+
+.none {
+  color: @bright-magenta;
+}
+
+.none {
+  color: @bright-white;
+}
+
+.constant.language {
+  color: @white;
+}
+
+.constant.other.groovy, .constant.other.java, .constant.variable.groovy, .constant.variable.java  {
+  text-decoration: underline;
+
+  color: @bright-red;
+}
+
+.constant.other.key {
+  color: @white;
+}
+
+.entity.name.tag {
+  color: @magenta;
+}
+
+.entity.other.attribute-name {
+  color: @green;
+}
+
+.entity.other.attribute-name.class.css, .punctuation.definition.entity {
+  color: @bright-cyan;
+}
+
+.meta.selector {
+  color: @magenta;
+}
+
+.none {
+  color: @bright-white;
+}
+
+.markup.heading .punctuation.definition.heading, .entity.name.section {
+  color: @bright-cyan;
+}
+
+.keyword.other.unit {
+  color: @bright-blue;
+}
+
+.markup.bold, .punctuation.definition.bold {
+  color: @bright-green;
+
+  font-weight: bold;
+}
+
+.markup.italic, .punctuation.definition.italic {
+  color: @magenta;
+
+  font-style: italic;
+}
+
+.markup.raw.inline {
+  color: @bright-yellow;
+}
+
+.string.other.link {
+  color: @magenta;
+}
+
+.meta.link {
+  color: @bright-white;
+}
+
+.markup.list {
+  color: @magenta;
+}
+
+.markup.quote {
+  color: @bright-white;
+}
+
+.meta.separator {
+  color: @white;
+  background-color: @dark-green;
+}
+
+.markup.inserted {
+  color: @bright-yellow;
+}
+
+.markup.deleted {
+  color: @magenta;
+}
+
+.markup.changed {
+  color: @magenta;
+}
+
+.constant.other.color {
+  color: @bright-red;
+}
+
+.string.regexp {
+  color: @cyan;
+}
+
+.constant.character.escape {
+  color: @yellow;
+}
+
+.punctuation.section.embedded, .variable.interpolation, .punctuation.definition.seperator.parameter.groovy {
+  color: @white;
+}
+
+.meta.structure.groovy {
+  color: @green;
+}
+
+span.source.css.less {
+    color: @white;
+}
+
+span.support.function.any-method.builtin.less {
+    color: @bright-green;
+}
+
+span.variable.other.less {
+    color: @green;
+}
+
+span.variable.other.less + span.variable.other.less {
+    color: @white;
+}
+
+span.support.function.any-method.builtin.less {
+    color: @bright-green;
+}
+
+.support.type.property-name.css {
+    color: @green;
+}
+
+.support.type.property-name.css + span.variable.other.less {
+    color: @white;
+}
+
+.meta.brace.curly.less {
+    color: @white;
+}
+
+.meta.brace.round.less {
+    color: @white;
+}
+
+.entity.other.attribute-name.class.css {
+    color: @magenta;
+}
+
+.keyword.control.html.elements {
+    color: @magenta;
+}
+
+.keyword.other.unit.css {
+    color: @bright-blue;
+}
+
+span.storage.modifier.static + span.meta.definition.variable.name {
+    color: @bright-red
+}
+
+span.storage.modifier.static + span + span.meta.definition.variable.name {
+    color: @bright-red
+}
+
+span.storage.modifier.static + span.meta.method-call {
+    span.meta.method {
+        text-decoration: underline;
+        color: @bright-green;
+    }
+}
+
+span.constant.numeric.css {
+    color: @bright-magenta;
+}
+
+.markup.underline.link {
+    color: @bright-blue;
+    text-decoration: underline;
+}
+
+.markup.heading.heading-1 {
+    color: @bright-white;
+    font-weight: normal;
+}
+
+.markup.heading.heading-2 {
+    color: @bright-white;
+    font-weight: normal;
+    font-style: italic;
+}
+
+.markup.heading.heading-3 {
+    color: @bright-cyan;
+    font-weight: normal;
+}
+
+.markup.heading.heading-4 {
+    color: @bright-cyan;
+    font-weight: normal;
+    font-style: italic;
+}
+
+.markup.heading.heading-5 {
+    color: @bright-blue;
+    font-weight: normal;
+}
+
+.markup.heading.heading-6 {
+    color: @bright-blue;
+    font-weight: normal;
+    font-style: italic;
+}
+
+.markup.bold {
+  font-weight: bold;
+  color: @cyan;
+}
+
+.markup.code {
+  .support {
+    font-weight: bold;
+  }
+}
+
+.invalid.illegal {
+    color: @black;
+    background-color: @red;
+}

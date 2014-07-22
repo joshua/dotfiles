@@ -1,0 +1,78 @@
+.list-inline > li:first-child {
+  padding-left: 12px;
+}
+
+.tab-bar {
+  background: @color-blue-dark;
+  font: 11px "Lucida Grande";
+  line-height: 18px;
+
+  .tab {
+    background: @color-blue-dark;
+    color: @color-text-sleeping;
+    padding: 8px 26px 8px 14px;
+    transition: color .1s ease-in;
+    font-weight: bold;
+    -webkit-font-smoothing: antialiased;
+
+    .close-icon {
+      display: none;
+
+      &:before {
+        font-size: 14px;
+      }
+    }
+
+    &.modified:not(:hover) .close-icon {
+      color: @color-accent;
+      display: inline-block;
+      top: 6px;
+      right: 8px;
+      width: 16px;
+      height: 16px;
+      font-size: 16px;
+      border: none;
+
+      &:before {
+        content: "\f06d";
+      }
+    }
+
+    .close-icon {
+      color: @color-accent;
+      cursor:default;
+      top: 8px;
+      right: 8px;
+    }
+  }
+
+  .tab:hover, .tab.modified:hover {
+    color: @color-white;
+
+    .close-icon {
+      display: inline-block;
+        cursor: pointer;
+      color: @color-accent;
+    }
+  }
+
+  .tab.active {
+    background: @color-blue-sleeping;
+    color: @color-white;
+    
+    .close-icon {
+      display: inline-block;
+    }
+
+    &.modified:not(:hover) .close-icon {
+      color: @color-accent;
+      top: 6px;
+      right: 8px;
+      border: none;
+
+      &:before {
+        content: "\f06d";
+      }
+    }
+  }
+}

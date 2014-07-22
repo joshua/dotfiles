@@ -1,0 +1,28 @@
+.overlay.support-info {
+  top: 50%;
+  margin-top: -178px;
+	display: block;
+  background: fade(@color-white, 96%);
+	padding: 30px 30px;
+	border-radius: @border-radius*2;
+	color: @color-grey-medium;
+
+	a {
+		color: @color-links;
+	}
+
+	h1 {
+	}
+
+	.btn {
+		background: lighten(@color-blue-active, 20%);
+		box-shadow: 0 0 0 1px lighten(@color-blue-active, 15%);
+		color: #fff;
+		transition: background-color .1s ease-in;
+
+		&:hover {
+			background: lighten(@color-blue-active, 25%);
+			box-shadow: 0 0 0 1px lighten(@color-blue-active, 15%), 0 1px 1px @color-blue-active;
+		}
+	}
+}

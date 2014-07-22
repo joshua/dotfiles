@@ -1,0 +1,31 @@
+{
+  "name": "alien-blood-ui",
+  "theme": "ui",
+  "version": "1.0.0",
+  "description": "Alien Blood UI theme for Atom",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zdj/alien-blood-ui"
+  },
+  "engines": {
+    "atom": ">=0.92.0"
+  },
+  "private": true,
+  "author": {
+    "name": "zdj",
+    "url": "https://github.com/zdj"
+  },
+  "readme": "# Alien Blood UI theme\n\nAlien Blood UI theme for Atom.\n\n![](https://raw.githubusercontent.com/zdj/alien-blood-ui/master/alien-blood-ui.png)\n",
+  "readmeFilename": "README.md",
+  "bugs": {
+    "url": "https://github.com/zdj/alien-blood-ui/issues"
+  },
+  "homepage": "https://github.com/zdj/alien-blood-ui",
+  "_id": "alien-blood-ui@1.0.0",
+  "dist": {
+    "shasum": "61b72c332639b7b06b894f5d0cbbbe83c3888187"
+  },
+  "_resolved": "/var/folders/32/qx8y3py13_gb8qmkyrf5vzkw0000gn/T/d-114327-26791-5w12x0/package.tgz",
+  "_from": "/var/folders/32/qx8y3py13_gb8qmkyrf5vzkw0000gn/T/d-114327-26791-5w12x0/package.tgz"
+}

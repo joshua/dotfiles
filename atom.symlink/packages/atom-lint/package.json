@@ -33,8 +33,7 @@
   "homepage": "https://github.com/yujinakayama/atom-lint",
   "_id": "atom-lint@0.11.3",
   "dist": {
-    "shasum": "a04495c41a658853cc30b155c44e9bd333b27892"
+    "shasum": "b9787c30353366dad94a159f3135c5851919e494"
   },
-  "_resolved": "/var/folders/8b/6ky0h1n11qn_n52jpnsy03m40000gq/T/d-114322-21828-1h8z81m/package.tgz",
-  "_from": "/var/folders/8b/6ky0h1n11qn_n52jpnsy03m40000gq/T/d-114322-21828-1h8z81m/package.tgz"
+  "_from": "/Users/josh/.atom/.node-gyp/.atom/.apm/atom-lint/0.11.3/package.tgz"
 }

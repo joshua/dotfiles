@@ -1,0 +1,193 @@
+.tree-view {
+  font: 11px/15px "Lucida Grande";
+  background: @color-tree-background;
+  padding:4px 6px;
+  min-width:0;
+  font-weight: bold;
+
+  &.list-group .selected > *, .tree-view.list-tree .selected > * {
+    position: static;
+  }
+
+  .entry {
+    min-height:20px;
+
+    .name {
+      color: #65737D;
+      vertical-align:middle;
+      display:inline-block;
+      position:relative;
+      left:0;
+      top:0;
+      right:0;
+      width:100%;
+      overflow:hidden;
+      text-overflow:ellipsis;
+      box-sizing:border-box;
+      white-space:nowrap;
+      line-height:21px;
+      padding-left: 2px;
+    }
+
+    &.status-new > .name,
+    &.status-modified > .name {
+    }
+
+    .name:hover {
+      color: @color-white;
+    }
+  }
+
+  .directory .entries {
+    margin-left: 6px;
+  }
+
+  .directory > .header {
+    line-height:17px;
+  }
+
+  .selected:before {
+    color: @color-accent;
+    margin-top:1px;
+    height:23px;
+    background: none;
+  }
+
+  .ignored {
+    color:#999;
+  }
+
+  .modified:before {
+    color: #f78a46;
+  }
+
+  .status-added:after,
+  .status-modified:after {
+    font-family: "Octicons Regular";
+    font-size: 10px;
+    line-height: 1;
+    position: absolute;
+    left: 8px;
+    margin-top: 8px;
+    height: 16px;
+    width: 16px;
+    -webkit-font-smoothing:antialiased;
+    z-index: 5;
+  }
+
+  .status-added:after {
+    content:'\f05d';
+    color: @color-added !important;
+  }
+
+  .status-modified:after {
+    content:'\f052';
+    color: @color-modified !important;
+  }
+
+  .expanded.new:before,
+  .expanded.modified:before {
+    display:none;
+  }
+
+  &:focus .selected:before {
+    color: @color-accent;
+  }
+
+  &:focus .selected.new:before,
+  &:focus .selected.modified:before {
+    color: @color-accent;
+  }
+
+  .selected.entry > .header > .name,
+  .selected.entry > .name {
+    color: @color-accent;
+  }
+
+  //HIDING ICONS FIX ME WITH LOVE
+  .entry > .header > .name:before,
+  .entry > .name:before {
+    display:none;
+  }
+
+  // .entry.selected > .header > .name:before,
+  // .entry.selected > .name:before {
+  // }
+
+  &.list-tree.has-collapsable-children .list-nested-item.collapsed > .list-item:before {
+    width:12px;
+    height:12px;
+    content:'\f016';
+    display:inline-block;
+    position:relative;
+    color: @color-blue-active;
+  }
+
+  &.list-tree.has-collapsable-children .list-nested-item > .list-item:before {
+    top:2px;
+    left:2px;
+    width:12px;
+    height:12px;
+    font-size: 12px;
+    content:'\f016';
+    color: @color-blue-active;
+  }
+
+  &:focus .selected.status-added:after,
+  &:focus .selected.status-modified:after {
+  }
+
+  .collapsed.status-added:after,
+  .collapsed.status-modified:after {
+    margin-top: -17px;
+  }
+
+  .expanded.status-added:after,
+  .expanded.status-modified:after {
+    display:none;
+  }
+}
+
+.tree-view-scroller {
+  overflow-x:hidden;
+}
+
+.header.list-item {
+  display:block;
+}
+
+.tree-view.list-group li:not(.list-nested-item), .tree-view.list-tree li:not(.list-nested-item), .tree-view.list-group li.list-nested-item > .list-item, .tree-view.list-tree li.list-nested-item > .list-item {
+  line-height:22px;
+}
+
+.list-tree.has-collapsable-children .list-nested-item > .list-tree > li, .list-tree.has-collapsable-children .list-nested-item > .list-group > li {
+  padding-left:20px;
+}
+
+.list-tree.has-collapsable-children li.list-item {
+  margin-left: -2px;
+}
+
+.tree-view-dialog {
+  font:11px "Lucida Grande";
+  color: #555;
+  padding:5px 8px 9px;
+  border-top:1px solid #999;
+  border-right:none;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5); /* top hightlight */
+
+  .prompt {
+    color: red;
+    font:500 13px "Helvetica Neue";
+    margin-bottom:3px;
+    position:relative;
+  }
+
+  .prompt:before {
+    color:rgba(0,0,0,0.2);
+    line-height:1;
+    top:1px;
+    display:inline-block;
+    position:relative;
+  }
+}
