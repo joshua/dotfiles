@@ -7,7 +7,7 @@ DISABLE_AUTO_UPDATE="true"
 DISABLE_AUTO_TITLE="true"
 COMPLETION_WAITING_DOTS="true"
 
-plugins=(rails3 git ruby sublime terminalapp rvm brew encode64 extract gem git history history-substring-search vagrant)
+plugins=(rails git ruby sublime terminalapp rvm brew encode64 extract gem git history history-substring-search vagrant)
 
 source $ZSH/oh-my-zsh.sh
 
