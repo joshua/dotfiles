@@ -3,3 +3,6 @@ export CPPFLAGS=-I/opt/X11/include
 
 export VISUAL='atom'
 export EDITOR='atom'
+
+# docker-machine
+eval "$(docker-machine env default)"
