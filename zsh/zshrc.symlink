@@ -59,3 +59,7 @@ do
 done
 
 unset config_files
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# added by travis gem
+[ -f /Users/josh/.travis/travis.sh ] && source /Users/josh/.travis/travis.sh
