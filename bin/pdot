@@ -1,0 +1,3 @@
+#!/bin/sh
+
+dot -T$@ | open -f -a /Applications/Preview.app
