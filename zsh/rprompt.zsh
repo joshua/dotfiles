@@ -8,8 +8,15 @@ ruby_prompt () {
 
 go_prompt () {
   if which go &> /dev/null; then
-    echo $(go version | awk '{ print $3 }')
+    local version=$(go version | awk '{ print $3 }')
+    echo ${version#"go"}
   fi
 }
 
-export RPROMPT=$'%{$fg[blue]%}‹$(go_prompt)›%{$reset_color%}%{$fg[red]%}‹$(ruby_prompt)›%{$reset_color%}'
+nodejs_prompt () {
+  if which nodenv &> /dev/null; then
+    echo $(nodenv version-name | awk '{ print $1 }')
+  fi
+}
+
+export RPROMPT=$'%{$fg[blue]%}‹$(go_prompt)›%{$reset_color%}%{$fg[red]%}‹$(ruby_prompt)›%{$reset_color%}%{$fg[green]%}‹$(nodejs_prompt)›%{$reset_color%}'
