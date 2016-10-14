@@ -1,0 +1,59 @@
+# load boxen env first
+[ -s /opt/boxen/env.sh ] && source /opt/boxen/env.sh
+
+# .files root directory
+#
+# expand %x since $0 is unreliable.
+#
+# TODO(js): Is there a 'cleaner' way to get this?
+DF=${${(%):-%x}:A:h:h}
+
+# oh-my-zsh locations
+ZSH=$DF/zsh/oh-my-zsh
+ZSH_CUSTOM=$DF/zsh/custom
+
+# oh-my-zsh settings (config, theme, etc)
+for f ($DF/zsh/*.zsh) source $f
+
+# oh-my-zsh plugins
+plugins=(
+  aws
+  dash
+  docker
+  dotnet
+  encode64
+  extract
+  fzf
+  gem
+  git
+  git2
+  go
+  grc
+  history
+  history-substring-search
+  homebrew
+  iterm2
+  jira
+  ruby
+  vagrant
+  web-search
+)
+
+# add homebrew functions and completions to fpath
+if [ -d $HOMEBREW_ROOT/share/zsh/site-functions ]; then
+  fpath=($HOMEBREW_ROOT/share/zsh/site-functions $fpath)
+fi
+
+# add local functions and completions to fpath
+fpath=($DF/zsh/functions $fpath)
+autoload -U $DF/zsh/functions/*(:t)
+
+# load oh-my-zsh
+source $ZSH/oh-my-zsh.sh
+
+# oh-my-zsh initializes completion before plugins are loaded.
+# so reload here to pickup anything added to $fpath by plugins.
+autoload -U compinit && compinit
+
+# use .localrc for secrets, etc that you don't want in git
+[ -L ~/.localrc ] && source ~/.localrc

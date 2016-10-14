@@ -18,8 +18,8 @@ set-variable -name HOME -value (resolve-path $env:HOME) -force
 #
 $HOME_ROOT  = [IO.Path]::GetPathRoot($HOME)
 $PROJECTS   = "$HOME_ROOT\Projects"
-$DOTFILES   = "$HOME\.dotfiles"
-$PS         = "$DOTFILES\powershell"
+$DF   = "$HOME\.dotfiles"
+$PS         = "$DF\powershell"
 $SCRIPTS    = "$PS\scripts"
 $env:EDITOR = 'sublime_text.exe -nw'
 

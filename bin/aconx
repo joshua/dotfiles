@@ -3,32 +3,43 @@ set -uo pipefail
 
 function joinStrings { local IFS="$1"; shift; echo "$*"; }
 function printHR { printf "_%.0s" {1..90}; echo; }
-function conCount { echo "$1" | egrep "$2" | wc -l; }
+function conCount {
+  local exclude=${3:-}
+  test ${exclude} = "exclude" && {
+      echo "$1" | egrep -v "$2" | wc -l
+      return
+  }
+  echo "$1" | egrep "$2" | wc -l;
+}
 
 INCLUDE="(LISTEN|ESTABLISHED)"
 EXCLUDE_PATTERNS=(
+  "->($(ipconfig getifaddr en0)|127.0.0.1)" # anything connecting to local
   '\[::1\]'
   # '127.0.0.1'
   'jabber-client' # Google Hangouts
   'identitys' # Apple Identity Service
   'Safari.SafeBrowsing'
-  "2BUA8C4S2C" # 1Password
+  '2BUA8C4S2C' # 1Password
+  'com.apple.WebKit' # anything using WebKit. the parent process will still be listed
+  'epmd' # erlang
+  'mongod' # mongo db
+  'Electron' # Google Inbox App, for now
+  'nginx' # its always running, i know its running
 )
 EXCLUDE="($(joinStrings '|' ${EXCLUDE_PATTERNS[@]}))"
 
 C=$(lsof -i -l -n +c0 | egrep ${INCLUDE} | egrep -v ${EXCLUDE})
 
-echo Excluding: $EXCLUDE
+echo $EXCLUDE
 printHR
 echo "$C" | awk '{print $1, $2, $8, $9}' | sort -f | column -t | nl -n ln
 printHR
 
 TOTALS=""
 read -r -d '' TOTALS <<- EOM
-  Apple:     $(conCount "$C" "(Apple|com.apple.*)")
-  Google:    $(conCount "$C" Google)
-  Microsoft: $(conCount "$C" Microsoft)
-  Local:     $(conCount "$C" "(127\.0\.0\.1|\[::1\])")
-  Total:     $(echo "$C" | wc -l)
+  Apple:     $(conCount "$C" "(Apple|com.apple.*)")     External: $(conCount "$C" "(127\.0\.0\.1|\[::1\])" exclude)
+  Google:    $(conCount "$C" Google)                    Loopback: $(conCount "$C" "(127\.0\.0\.1|\[::1\])")
+  Microsoft: $(conCount "$C" Microsoft)                 Total:    $(echo "$C" | wc -l)
 EOM
 echo "$TOTALS" | column -t

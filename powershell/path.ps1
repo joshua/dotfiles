@@ -12,6 +12,6 @@ function script:append-path([string] $path) {
 #
 # Append PATH with useful directories
 #
-append-path "$DOTFILES\bin"
+append-path "$DF\bin"
 append-path "C:\Program Files\Sublime Text 2"
 append-path "$($env:WINDIR)\system32\inetsrv"

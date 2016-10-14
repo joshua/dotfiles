@@ -1,0 +1,142 @@
+
+[hub]
+  protocol = https
+  host = code.ac.st
+
+[user]
+  name = joshs
+  email = josh@acst.com
+  signingkey = 6FB5819C
+
+[credential]
+  helper = /opt/boxen/bin/boxen-git-credential
+
+[color]
+  diff   = auto
+  status = auto
+  branch = auto
+  ui     = always
+
+[color "diff-highlight"]
+  oldNormal = red bold
+  oldHighlight = red bold 52
+  newNormal = green bold
+  newHighlight = green bold 22
+
+[color "branch"]
+  current = yellow reverse
+  local = yellow
+  remote = green
+
+[color "status"]
+  added = yellow
+  changed = green
+  untracked = cyan
+
+[core]
+  excludesfile = /opt/boxen/config/git/gitignore
+  editor = atom --wait
+
+[apply]
+  whitespace = nowarn
+
+[mergetool]
+  keepBackup = false
+
+[difftool]
+  prompt = false
+
+[help]
+  autocorrect = 1
+
+[push]
+  # See `git help config` (search for push.default)
+  # for more information on different options of the below setting.
+  #
+  # Setting to git 2.0 default to surpress warning message
+  default = simple
+
+[alias]
+  la = "!git config -l | grep alias | cut -c 7-"
+
+  promote = !$DF/bin/git-promote
+  wtf     = !$DF/bin/git-wtf
+  rank-contributers = !$DF/bin/git-rank-contributers
+  count   = !git shortlog -sn
+
+  co   = checkout
+  cp   = cherry-pick
+  st   = status -s
+  cl   = clone
+  ci   = commit
+  br   = branch
+  diff = diff --word-diff
+  dc   = diff --cached
+
+  sl   = stash list
+  sa   = stash apply
+  ss   = stash save
+
+  r    = reset
+  r1   = reset HEAD^
+  r2   = reset HEAD^^
+  rh   = reset --hard
+  rh1  = reset HEAD^ --hard
+  rh2  = reset HEAD^^ --hard
+
+  # List commits in short form, with colors and branch/tag annotations
+  ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
+
+  # List commits showing changed files
+  ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+
+  # List with no colors
+  lnc = log --pretty=format:"%h\\ %s\\ [%cn]"
+
+  # List oneline commits showing dates
+  lds = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
+
+  # List oneline commits showing relative dates
+  ld = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=relative
+
+  # Default look for short git log
+  le = log --oneline --decorate
+
+  # Show the history of a file, with diffs
+  filelog = log -u
+  fl      = log -u
+
+  # Show modified files in last commit
+  dl = "!git ll -1"
+
+  # Show a diff last commit
+  dlc = diff --cached HEAD^
+
+  # Show content (full diff) of a commit given a revision
+  diffr  = "!f() { git diff "$1"^.."$1"; }; f"
+  dr     = "!f() { git diff "$1"^.."$1"; }; f"
+
+  # List changes of a commit given a revision
+  lc = "!f() { git ll "$1"^.."$1"; }; f"
+
+  # Find a file path in codebase
+  f = "!git ls-files | grep -i"
+
+  # Search/grep your entire codebase for a string:
+  grep = grep -Ii
+  gr   = grep -Ii
+
+[github]
+  user = joshua
+
+[filter "lfs"]
+  clean = git-lfs clean %f
+  smudge = git-lfs smudge %f
+  required = true
+
+[http]
+  cookiefile = /Users/josh/.gitcookies
+
+[pager]
+  diff = diff-so-fancy | less --tabs=1,5 -R
+  show = diff-so-fancy | less --tabs=1,5 -R

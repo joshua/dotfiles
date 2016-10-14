@@ -1,3 +1,12 @@
 [submodule "powershell/posh-git"]
 	path = powershell/posh-git
 	url = https://github.com/dahlbyk/posh-git
+[submodule "home/fonts"]
+	path = home/fonts
+	url = git@github.com:joshua/fonts.git
+[submodule "zsh/oh-my-zsh"]
+	path = zsh/oh-my-zsh
+	url = https://github.com/robbyrussell/oh-my-zsh.git
+[submodule "zsh/custom/themes/powerlevel9k"]
+	path = zsh/custom/themes/powerlevel9k
+	url = https://github.com/bhilburn/powerlevel9k.git
