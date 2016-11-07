@@ -35,6 +35,7 @@ plugins=(
   homebrew
   iterm2
   jira
+  k
   ruby
   vagrant
   web-search
