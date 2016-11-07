@@ -18,6 +18,7 @@ for f ($DF/zsh/*.zsh) source $f
 # oh-my-zsh plugins
 plugins=(
   aws
+  bc
   dash
   docker
   dotnet
