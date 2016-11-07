@@ -38,6 +38,7 @@ plugins=(
   ruby
   vagrant
   web-search
+  z
 )
 
 # add homebrew functions and completions to fpath
