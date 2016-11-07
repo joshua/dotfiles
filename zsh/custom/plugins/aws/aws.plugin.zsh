@@ -3,8 +3,9 @@ export AWS_HOME=~/.aws
 # AWS Profile helpers
 function agp { echo $AWS_DEFAULT_PROFILE }
 function asp { export AWS_DEFAULT_PROFILE=$1; export AWS_PROFILE=$1 }
-function aws_profiles { reply=($(grep profile $AWS_HOME/config|sed -e 's/.*profile \([a-zA-Z0-9_-]*\).*/\1/')) }
-compctl -K aws_profiles asp
+function aws_profiles { echo $(grep profile $AWS_HOME/config|sed -e 's/.*profile \([a-zA-Z0-9_-]*\).*/\1/') }
+function aws_profiles_comp { reply=($(aws_profiles)) }
+compctl -K aws_profiles_comp asp
 
 # Set default profile, if available
 [ -r $AWS_HOME/default ] && asp $(cat $AWS_HOME/default)
