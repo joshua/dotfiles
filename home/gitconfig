@@ -4,8 +4,8 @@
   host = code.ac.st
 
 [user]
-  name = joshs
-  email = josh@acst.com
+	name = joshs
+	email = josh@acst.com
   signingkey = 6FB5819C
 
 [credential]
@@ -140,3 +140,5 @@
 [pager]
   diff = diff-so-fancy | less --tabs=1,5 -R
   show = diff-so-fancy | less --tabs=1,5 -R
+[url "git@code.ac.st:"]
+	insteadOf = https://code.ac.st/
