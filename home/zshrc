@@ -61,3 +61,9 @@ autoload -U compinit && compinit
 
 # use .localrc for secrets, etc that you don't want in git
 [ -L ~/.localrc ] && source ~/.localrc
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/josh/Downloads/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/josh/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/josh/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/josh/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
