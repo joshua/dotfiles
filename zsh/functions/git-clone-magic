@@ -1,0 +1,52 @@
+# paste-git-clone-magic automatically prepends pasted git urls with 'git clone'
+#
+# To use this widget, put this in your startup files (eg, .zshrc)
+#
+# autoload -Uz paste-git-clone-magic
+# zle -N paste-git paste-git-clone-magic
+#
+# You can customize which schemas are to be quoted by using
+#
+# zstyle :paste-git-clone-magic schema http https git
+#
+# The default can be seen just below.
+
+
+# local -a schema
+# zstyle -a :paste-git-clone-magic schema schema || schema=(https:// git@)
+#
+# local wantquote=${NUMERIC:-0}
+# local content
+# local start=$#LBUFFER
+#
+# zle .$WIDGET -N content
+#
+# if (( $wantquote == 0 )); then
+#   if [[ $content = (${(~j:|:)schema})* ]]; then
+#     wantquote=1
+#   fi
+# fi
+#
+# if (( $wantquote == 1 )); then
+#   content="git clone ${content}"
+# fi
+#
+# LBUFFER+=$content
+#
+# YANK_START=$start
+# YANK_END=$#LBUFFER
+# zle -f yank
+
+
+local content
+local start=$#LBUFFER
+
+zle .$WIDGET -N content
+
+content=${(q-)content}
+
+LBUFFER+=$content
+
+YANK_START=$start
+YANK_END=$#LBUFFER
+zle -f yank

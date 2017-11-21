@@ -17,17 +17,21 @@
 # stty start '^-' stop '^-'
 # bindkey "^q" array-to-quote
 
-expand-file-urls() {
-    autoload -U modify-current-argument
-    modify-current-argument '$(
-      local prefix="file://"
-      local file=${ARG#$prefix}
-      if [[ ${ARG} == ($prefix)* && -a $file ]]; then
-        print ${prefix}${file:a}
-      else
-        print ${ARG}
-      fi
-    )'
-}
-zle -N expand-file-urls
-bindkey "^x" expand-file-urls
+# expand-file-urls() {
+#     autoload -U modify-current-argument
+#     modify-current-argument '$(
+#       local prefix="file://"
+#       local file=${ARG#$prefix}
+#       if [[ ${ARG} == ($prefix)* && -a $file ]]; then
+#         print ${prefix}${file:a}
+#       else
+#         print ${ARG}
+#       fi
+#     )'
+# }
+# zle -N expand-file-urls
+# bindkey "^x" expand-file-urls
+
+
+# git clone magic
+# zle -N bracketed-paste git-clone-magic
