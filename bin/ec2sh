@@ -1,0 +1,10 @@
+#!/bin/bash
+set -euo pipefail
+
+KEY=${1:-}
+if [ -z "$KEY" ] || [ ! -f "$HOME/.ssh/$KEY.pem" ]; then
+  /usr/bin/ssh "$@"
+else
+  shift 1
+  /usr/bin/ssh -i $HOME/.ssh/$KEY.pem "$@"
+fi
