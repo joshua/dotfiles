@@ -6,7 +6,7 @@
 [user]
 	name = joshs
 	email = josh@acst.com
-  signingkey = 6FB5819C
+  signingkey = 3ED16A77
 
 [credential]
   helper = /opt/boxen/bin/boxen-git-credential
@@ -130,9 +130,10 @@
   user = joshua
 
 [filter "lfs"]
-  clean = git-lfs clean %f
-  smudge = git-lfs smudge %f
   required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
 
 [http]
   cookiefile = /Users/josh/.gitcookies
