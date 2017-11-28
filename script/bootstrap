@@ -1,0 +1,37 @@
+#!/bin/zsh
+
+# absolute path to .files directory
+local root=${0:a:h:h}
+
+source $root/zsh/lib/core.zsh
+
+set -e
+banner::print
+
+# keep-alive: update existing sudo time stamp until this script has finished
+while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+
+TRAPINT() {
+  print "Caught SIGINT, aborting."
+  return $(( 128 + $1 ))
+}
+
+# ensure we're on macOS 10.12 or higher
+macos::ensure_version "10.(12|13)" || {
+  log::panic "must be on macOS 10.12 or higher"
+}
+
+# ensure we're not running as root
+[ "$USER" = "root" ] && log::panic "dont run this as root"
+
+# the current user must be an admin
+macos::check_group "admin" || log::panic "$USER must be an admin"
+
+# ask for sudo password and then keep it alive so we're not prompted again
+sudo -v
+while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+
+local macos=$root/macos
+
+# source all macos scripts
+for f ($macos/*.zsh) source $f
