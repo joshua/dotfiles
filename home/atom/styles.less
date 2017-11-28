@@ -1,0 +1,136 @@
+@import "syntax-variables";
+// @import "colors";
+
+@highlight-color: hsl(251, 22%, 40%) !important;
+
+atom-text-editor {
+
+  // enable ligatures and contextual alternatives
+  font-feature-settings: "liga" 1, "calt" 1;
+
+  // disable ligatures in quoted strings and regular expressions
+  .syntax--string.syntax--quoted,
+  .syntax--string.syntax--regexp {
+    font-feature-settings: "liga" 0, "calt" 0;
+  }
+
+  // slightly lighten the color of a comment the cursor is on
+  .cursor-line .syntax--comment {
+    // color: lighten(@mono-3, 20%);
+    // color: lighten(@light-grey, 20%);
+    // color: lighten(@syntax-comment-color, 20%);
+  }
+
+  // selected region color
+  .selection .region {
+    // background-color: lighten(rgba(56, 56, 56, 1.0), 5%);
+    // background-color: @syntax-cursor-color;
+    // opacity: 0.15;
+    // background-color: @highlight-color !important;
+  }
+
+  // Change the highlighed line borders to match the cursor color
+  .line.highlight-line-multi-line-solid-bottom {
+    border-bottom-color: @syntax-cursor-color;
+  }
+  .line.highlight-line-multi-line-solid-top {
+    border-top-color: @syntax-cursor-color;
+  }
+
+  // git commit messages
+  .git-commit.line-too-long.deprecated {
+    color: orange;
+    text-decoration: none;
+  }
+  .git-commit.line-too-long.illegal {
+    color: #fff;
+    background: #DA2C43;
+    opacity: 0.9;
+  }
+
+  // make the minimap cursor line more dramatic
+  .minimap .cursor-line {
+      background: purple;
+  }
+}
+
+// make the codeglance element stand out more from the main editor
+minimap-codeglance {
+  box-shadow: 0 0 50px rgba(0, 0, 0, .5);
+  border: 2px solid #171c26;
+}
+
+// Terminal Theme
+.platformio-ide-terminal .xterm {
+  background-color: #27292c;
+  background-color: @syntax-background-color;
+  color: #d0d2d1;
+
+  ::selection {
+    background-color: #474c53;
+  }
+
+  .terminal-cursor {
+    background-color: green;
+  }
+}
+
+// SymbolsView
+.symbols-view {
+  &.select-list ol.list-group li .primary-line,
+  &.select-list ol.list-group li .secondary-line {
+
+    font-family: Fira Code;
+    font-size: 12px;
+
+    // let lines wrap
+    text-overflow: initial;
+    white-space: initial;
+    overflow: initial;
+
+    // reduce line-height
+    line-height: 1.0em;
+    padding-top: .1em;
+    padding-bottom: .0em;
+
+    // make sure wrapped lines get padding
+    // padding-left: 21px;
+    &.icon:before {
+      margin-left: -21px;
+    }
+
+    .character-match {
+        color: rgb(200, 200, 10) !important;
+    }
+  }
+
+  &.select-list ol.list-group li .secondary-line {
+      float: right;
+      margin-top: -12px;
+      padding-top: 0em;
+      padding-bottom: 0em;
+      font-size: 12px;
+      color: rgba(200, 200, 10, 0.8) !important;
+  }
+}
+
+// TreeView
+.tree-view {
+  font-family: "Fira Code";
+
+  // // TreeView line height
+  // .list-group li:not(.list-nested-item),
+  // .list-tree li:not(.list-nested-item),
+  // .list-group li.list-nested-item > .list-item,
+  // .list-tree li.list-nested-item > .list-item {
+  //     line-height:18px;
+  // }
+  // .list-group .selected:before,
+  // .list-tree .selected:before {
+  //     height:18px;
+  // }
+  // .list-tree.has-collapsable-children .list-nested-item > .list-tree > li,
+  // .list-tree.has-collapsable-children .list-nested-item > .list-group > li {
+  //     padding-left:12px;
+  // }
+}

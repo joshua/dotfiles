@@ -1,0 +1,313 @@
+"*":
+  "activate-power-mode":
+    particles:
+      colours:
+        type: "random"
+      size: {}
+      spawnCount: {}
+      totalCount: {}
+    screenShake: {}
+  "advanced-new-file":
+    createFileInstantly: true
+    suggestCurrentFilePath: true
+  "advanced-open-file":
+    createFileInstantly: true
+  "apathy-theme": {}
+  "atom-clock":
+    dateFormat: " hh:mm"
+    showClockIcon: true
+  "atom-ide-ui":
+    "atom-ide-diagnostics-ui":
+      showDiagnosticTraces: true
+      useExperimentalUi: true
+    use:
+      "atom-ide-diagnostics": false
+      "atom-ide-diagnostics-ui": false
+  "atom-material-ui":
+    colors:
+      genAccent: true
+    depth: true
+    fonts: {}
+    panelContrast: true
+    tabs:
+      compactTabs: true
+    treeView:
+      compactList: true
+    ui:
+      panelContrast: true
+  "autocomplete-go":
+    snippetMode: "nameAndType"
+  "autocomplete-plus": {}
+  "block-cursor":
+    global:
+      blinkOn:
+        backgroundColor:
+          alpha: 0
+          blue: 252
+          green: 186
+          red: 128
+        borderColor:
+          alpha: 1
+          blue: 255
+          green: 134
+          red: 79
+        borderStyle: "bordered-box"
+  clock:
+    icon: true
+  core:
+    disabledPackages: [
+      "atom-lint"
+      "autocomplete-plus-async"
+      "git-tab-status"
+      "visual-bell"
+      "flex-tool-bar"
+      "autocomplete-go"
+      "godoc"
+      "gometalinter-linter"
+      "tool-bar"
+      "tool-bar-main"
+      "linter-gcc"
+      "go-outline"
+      "minimap-cursorline"
+      "minimap-linter"
+      "minimap-selection"
+      "minimap-find-and-replace"
+      "minimap-highlight-selected"
+      "minimap"
+      "minimap-bookmarks"
+      "minimap-codeglance"
+      "suggs"
+      "linter-golinter"
+      "city-lights-icons"
+      "clock"
+      "dash"
+      "git-time-machine"
+      "pigments"
+      "project-manager"
+      "linter-lua"
+      "editor-stats"
+      "platformio-ide-terminal"
+      "vim-modeline"
+      "language-thrift"
+      "language-puppet"
+      "language-pegjs"
+      "language-groovy"
+      "language-erlang"
+      "language-batch"
+    ]
+    packagesWithKeymapsDisabled: [
+      "sort-lines"
+    ]
+    telemetryConsent: "no"
+    themes: [
+      "one-dark-ui"
+      "city-lights-syntax"
+    ]
+    titleBar: "custom"
+    warnOnLargeFileLimit: 20
+  editor:
+    fontFamily: "Fira Code"
+    invisibles: {}
+    scrollPastEnd: true
+    showIndentGuide: true
+    showInvisibles: true
+  "editor-background":
+    blurRadius: 0
+    image:
+      backgroundSize: "cover"
+    imageURL: ""
+    text: {}
+    video: {}
+  "exception-reporting":
+    userId: "96122188-4f4f-45d5-ba0b-7074cf231b39"
+  expose:
+    useAnimations: false
+  "file-types":
+    hosts$: "source.shell"
+  filesize:
+    KibibyteRepresentation: false
+  "find-and-replace":
+    projectSearchResultsPaneSplitDirection: "right"
+  "go-config":
+    gopath: "~/src/go"
+  "go-debug":
+    configurationFile: [
+      ".atom/debug.json"
+    ]
+    dlvPath: "/opt/boxen/homebrew/bin/dlv"
+    panelInitialVisible: true
+  "go-find-references":
+    path: "/Users/josh/src/go/bin/go-find-references"
+  "go-oracle":
+    goPath: "/Users/josh/src/go"
+  "go-outline": {}
+  "go-plus":
+    autocomplete: {}
+    config: {}
+    currentPanelHeight: "12.872657580919933vh"
+    currentPanelWidth: "26.2890625vw"
+    goInstallation: "/opt/boxen/homebrew/bin/go"
+    goPath: "/Users/josh/src/go"
+    lint:
+      args: [
+        "--vendor"
+        "--disable-all"
+        "--enable=gocyclo"
+        "--enable=vet"
+        "--enable=vetshadow"
+        "--enable=golint"
+        "--enable=ineffassign"
+        "--enable=goconst"
+        "--enable=deadcode"
+        "--disable=errcheck"
+        "--enable=varcheck"
+        "--enable=structcheck"
+        "--enable=misspell"
+        "--enable=interfacer"
+        "--tests"
+        "--json"
+        "."
+      ]
+    lintOnSave: true
+    panel:
+      currentHeight: "19.41974730931212vh"
+      currentWidth: "32.68229166666667vw"
+      displayMode: "closed"
+      focusOnFailure: false
+    panelDisplayMode: "closed"
+    test:
+      coverageDisplayMode: "gutter"
+      coverageHighlightMode: "covered"
+  "gometalinter-linter":
+    args: [
+      "--vendor"
+      "--fast"
+      "--json"
+      "--disable=gotype"
+      "--skip=proto"
+      "./..."
+    ]
+  "highlight-line":
+    enableBackgroundColor: false
+    enableSelectionBorder: true
+    hideHighlightOnSelect: true
+  "highlight-selected":
+    highlightBackground: true
+    lightTheme: true
+  "hyperlink-hyperclick": {}
+  "isotope-ui":
+    backgroundColor: "false"
+    customBackgroundColorPicker:
+      alpha: 1
+      blue: 248
+      green: 254
+      red: 213
+    fontFamily: "Fira Sans"
+    fontWeight: "Regular"
+    minimalMode: true
+  "jira-issue-search":
+    jiraSearchUrl: "https://jira.acstechnologies.com"
+  linter: {}
+  "linter-cpplint":
+    executablePath: "/usr/local/bin/cpplint"
+  "linter-golinter":
+    executablePath: "/Users/josh/src/go/bin/golint"
+  "linter-luacheck": {}
+  "linter-spell": {}
+  "linter-ui-default":
+    decorateOnTreeView: "Files and Directories"
+    showProviderName: true
+  "linter-ui-hinted":
+    style: "background"
+  "linter-write-good": {}
+  "markdown-preview":
+    useGitHubStyle: true
+  minimap:
+    autoToggle: false
+    displayCodeHighlights: false
+    plugins:
+      bookmarks: false
+      bookmarksDecorationsZIndex: 0
+      codeglance: false
+      codeglanceDecorationsZIndex: 0
+      cursorline: true
+      cursorlineDecorationsZIndex: 0
+      "find-and-replace": true
+      "find-and-replaceDecorationsZIndex": 0
+      "highlight-selected": true
+      "highlight-selectedDecorationsZIndex": 0
+      linter: true
+      linterDecorationsZIndex: 0
+      selection: false
+      selectionDecorationsZIndex: 0
+    scrollAnimation: true
+  "minimap-codeglance":
+    numberOfLines: 15
+  "nord-atom-ui":
+    darkerFormFocusEffect: true
+  "one-dark-mini-ui":
+    tabSizing: "Even"
+  "one-dark-ui":
+    tabSizing: "Even"
+  "one-light-ui": {}
+  "open-recent":
+    maxRecentDirectories: 20
+    maxRecentFiles: 20
+  "package-sync":
+    createOnChange: true
+    forceOverwrite: true
+  "platformio-ide-terminal":
+    ansiColors:
+      normal:
+        blue: "#92b2ca"
+        cyan: "#9ac9c4"
+        green: "#c2c77b"
+        magenta: "#c0a7c8"
+        red: "#d77c79"
+        white: "#ffffff"
+        yellow: "#f3cf87"
+      zBright:
+        brightBlue: "#92b2ca"
+        brightCyan: "#9ac9c4"
+        brightGreen: "#c2c77b"
+        brightMagenta: "#c0a7c8"
+        brightRed: "#d77c79"
+        brightYellow: "#f3cf87"
+    core: {}
+    style:
+      fontFamily: "Droid Sans Mono Awesome"
+      fontSize: "12"
+    toggles:
+      autoClose: true
+  "project-view":
+    displayPath: false
+  "release-notes":
+    viewedVersion: "0.95.0"
+  "spell-check": {}
+  "status-bar": {}
+  tabs:
+    alwaysShowTabBar: false
+    enableVcsColoring: true
+    usePreviewTabs: true
+  "tester-go":
+    coverageHighlightMode: "disabled"
+  "tool-bar":
+    fullWidth: false
+    iconSize: "16px"
+    visible: false
+  "travis-ci-status": {}
+  "tree-view": {}
+  "vim-modeline":
+    insertModelineType: "short"
+  "visual-bell": {}
+  welcome:
+    showOnStartup: false
+".basic.html.text":
+  editor:
+    scrollPastEnd: false
+".go.source":
+  editor:
+    tabLength: 4
+".json.source":
+  editor:
+    tabLength: 4
