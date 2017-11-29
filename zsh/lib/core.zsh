@@ -26,7 +26,7 @@ log::panic() { log::r $1; exit 1 }
 
 # utility functions
 macos::version() { echo -E $(sw_vers -productVersion) }
-macos::ensure_version() { [[ $(macos::version) =~ "^$1\$" ]] }
+macos::ensure_version() { [[ $(macos::version) =~ "^$1" ]] }
 macos::check_group() {
   local o=$(dsmemberutil checkmembership -U "$USER" -G "$1")
   [[ "$o" =~ "is a member" ]]
