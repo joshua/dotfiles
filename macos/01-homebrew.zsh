@@ -8,12 +8,12 @@ local brew_repo="/usr/local/Homebrew"
 [ -d "$brew_repo" ] || sudo mkdir -p "$brew_repo"
 
 sudo chown root:wheel $brew_prefix 2>/dev/null || true
-sudo chown -R "$USER:admin" $brew_repo || true
+sudo chown -R $USER\:admin $brew_repo || true
 
 for d in Cellar Frameworks bin etc include lib opt sbin share var
 do
   [ -d $brew_prefix/$d ] || sudo mkdir -p $brew_prefix/$d
-  sudo chown -R "$USER:admin" $brew_prefix/$d
+  sudo chown -R $USER\:admin $brew_prefix/$d
 done
 
 (
