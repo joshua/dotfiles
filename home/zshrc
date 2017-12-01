@@ -1,6 +1,3 @@
-# load boxen env first
-[ -s /opt/boxen/env.sh ] && source /opt/boxen/env.sh
-
 # .files root directory
 #
 # expand %x since $0 is unreliable.

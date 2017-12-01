@@ -1,19 +1,19 @@
 # Setup fzf
 # ---------
-if [[ ! "$PATH" == */opt/boxen/homebrew/opt/fzf/bin* ]]; then
-  export PATH="$PATH:/opt/boxen/homebrew/opt/fzf/bin"
+if [[ ! "$PATH" == *$HOMEBREW_ROOT/opt/fzf/bin* ]]; then
+  export PATH="$PATH:$HOMEBREW_ROOT/opt/fzf/bin"
 fi
 
 # Man path
 # --------
-if [[ ! "$MANPATH" == */opt/boxen/homebrew/opt/fzf/man* && -d "/opt/boxen/homebrew/opt/fzf/man" ]]; then
-  export MANPATH="$MANPATH:/opt/boxen/homebrew/opt/fzf/man"
+if [[ ! "$MANPATH" == *$HOMEBREW_ROOT/opt/fzf/man* && -d "$HOMEBREW_ROOT/opt/fzf/man" ]]; then
+  export MANPATH="$MANPATH:$HOMEBREW_ROOT/opt/fzf/man"
 fi
 
 # Auto-completion
 # ---------------
-[[ $- == *i* ]] && source "/opt/boxen/homebrew/opt/fzf/shell/completion.zsh" 2> /dev/null
+[[ $- == *i* ]] && source "$HOMEBREW_ROOT/opt/fzf/shell/completion.zsh" 2> /dev/null
 
 # Key bindings
 # ------------
-source "/opt/boxen/homebrew/opt/fzf/shell/key-bindings.zsh"
+source "$HOMEBREW_ROOT/opt/fzf/shell/key-bindings.zsh"
