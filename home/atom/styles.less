@@ -1,9 +1,15 @@
+@import "colors";
 @import "syntax-variables";
-// @import "colors";
 
 @highlight-color: hsl(251, 22%, 40%) !important;
 
+// =============================================================================
+// Atom Text editor
+// =============================================================================
+
 atom-text-editor {
+  // background-color: darken(#212836, 5%);
+  background-color: darken(@syntax-background-color, 4%);
 
   // enable ligatures and contextual alternatives
   font-feature-settings: "liga" 1, "calt" 1;
@@ -14,20 +20,27 @@ atom-text-editor {
     font-feature-settings: "liga" 0, "calt" 0;
   }
 
+  // brighten function names
+  .syntax--support {
+      &.syntax--function {
+          color: darken(@hue-1, 25%);
+      }
+  }
+
   // slightly lighten the color of a comment the cursor is on
-  .cursor-line .syntax--comment {
+  // .cursor-line .syntax--comment {
     // color: lighten(@mono-3, 20%);
     // color: lighten(@light-grey, 20%);
     // color: lighten(@syntax-comment-color, 20%);
-  }
+  // }
 
   // selected region color
-  .selection .region {
+  // .selection .region {
     // background-color: lighten(rgba(56, 56, 56, 1.0), 5%);
     // background-color: @syntax-cursor-color;
     // opacity: 0.15;
     // background-color: @highlight-color !important;
-  }
+  // }
 
   // Change the highlighed line borders to match the cursor color
   .line.highlight-line-multi-line-solid-bottom {
@@ -54,28 +67,60 @@ atom-text-editor {
   }
 }
 
+
+// =============================================================================
+// Atom Workspace
+// =============================================================================
+
+atom-workspace {
+    // wrap guide
+    .wrap-guide {
+        background-color: #194772; // default
+        // background-color: #012b42 !important;
+    }
+
+    atom-pane-container atom-pane {
+        // border-left: 1px solid rbga(181, 19, 19, 0); // default
+        // border-left: 1px solid #194772 !important;
+        // border-bottom: 1px solid #194772 !important;
+    }
+}
+
+
+// =============================================================================
+// MiniMap
+// =============================================================================
+//
 // make the codeglance element stand out more from the main editor
-minimap-codeglance {
-  box-shadow: 0 0 50px rgba(0, 0, 0, .5);
-  border: 2px solid #171c26;
-}
+// minimap-codeglance {
+//   box-shadow: 0 0 50px rgba(0, 0, 0, .5);
+//   border: 2px solid #171c26;
+// }
 
+
+// =============================================================================
 // Terminal Theme
-.platformio-ide-terminal .xterm {
-  background-color: #27292c;
-  background-color: @syntax-background-color;
-  color: #d0d2d1;
+// =============================================================================
+//
+// .platformio-ide-terminal .xterm {
+//   background-color: #27292c;
+//   background-color: @syntax-background-color;
+//   color: #d0d2d1;
+//
+//   ::selection {
+//     background-color: #474c53;
+//   }
+//
+//   .terminal-cursor {
+//     background-color: green;
+//   }
+// }
 
-  ::selection {
-    background-color: #474c53;
-  }
 
-  .terminal-cursor {
-    background-color: green;
-  }
-}
-
+// =============================================================================
 // SymbolsView
+// =============================================================================
+
 .symbols-view {
   &.select-list ol.list-group li .primary-line,
   &.select-list ol.list-group li .secondary-line {
@@ -114,23 +159,24 @@ minimap-codeglance {
   }
 }
 
+// =============================================================================
 // TreeView
-.tree-view {
-  font-family: "Fira Code";
+// =============================================================================
 
-  // // TreeView line height
-  // .list-group li:not(.list-nested-item),
-  // .list-tree li:not(.list-nested-item),
-  // .list-group li.list-nested-item > .list-item,
-  // .list-tree li.list-nested-item > .list-item {
-  //     line-height:18px;
-  // }
-  // .list-group .selected:before,
-  // .list-tree .selected:before {
-  //     height:18px;
-  // }
-  // .list-tree.has-collapsable-children .list-nested-item > .list-tree > li,
-  // .list-tree.has-collapsable-children .list-nested-item > .list-group > li {
-  //     padding-left:12px;
-  // }
+.tree-view {
+    // TreeView line height
+  .list-group li:not(.list-nested-item),
+  .list-tree li:not(.list-nested-item),
+  .list-group li.list-nested-item > .list-item,
+  .list-tree li.list-nested-item > .list-item {
+      line-height:18px;
+  }
+  .list-group .selected:before,
+  .list-tree .selected:before {
+      height:18px;
+  }
+  .list-tree.has-collapsable-children .list-nested-item > .list-tree > li,
+  .list-tree.has-collapsable-children .list-nested-item > .list-group > li {
+      padding-left:12px;
+  }
 }

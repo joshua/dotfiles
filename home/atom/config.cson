@@ -13,28 +13,43 @@
   "advanced-open-file":
     createFileInstantly: true
   "apathy-theme": {}
+  "atom-cfn-lint":
+    cfnLintExecutablePath: "/usr/local/bin/cfn-lint"
   "atom-clock":
     dateFormat: " hh:mm"
     showClockIcon: true
+  "atom-env-for-project":
+    envFile: ".atom/env"
+    showNotificationOnError: true
   "atom-ide-ui":
+    "atom-ide-datatip":
+      onlyTopDatatip: true
     "atom-ide-diagnostics-ui":
+      autoVisibility: true
       showDiagnosticTraces: true
       useExperimentalUi: true
+    "atom-ide-terminal":
+      cursorBlink: true
+    hyperclick: {}
     use:
-      "atom-ide-diagnostics": false
-      "atom-ide-diagnostics-ui": false
+      "atom-ide-outline-view": "always"
+      "atom-ide-terminal": "always"
   "atom-material-ui":
     colors:
+      accentColor: "#af0010"
       genAccent: true
     depth: true
     fonts: {}
     panelContrast: true
     tabs:
       compactTabs: true
+      stretchedTabs: true
     treeView:
       compactList: true
     ui:
       panelContrast: true
+  "atom-package-deps":
+    ignored: []
   "autocomplete-go":
     snippetMode: "nameAndType"
   "autocomplete-plus": {}
@@ -52,6 +67,14 @@
           green: 134
           red: 79
         borderStyle: "bordered-box"
+  build:
+    beepWhenDone: true
+    notificationOnRefresh: true
+    overrideThemeColors: false
+    refreshOnShowTargetList: true
+  "build-make": {}
+  "clear-night-ui":
+    layoutMode: "Compact"
   clock:
     icon: true
   core:
@@ -60,12 +83,9 @@
       "autocomplete-plus-async"
       "git-tab-status"
       "visual-bell"
-      "flex-tool-bar"
       "autocomplete-go"
       "godoc"
       "gometalinter-linter"
-      "tool-bar"
-      "tool-bar-main"
       "linter-gcc"
       "go-outline"
       "minimap-cursorline"
@@ -83,34 +103,42 @@
       "dash"
       "git-time-machine"
       "pigments"
-      "project-manager"
       "linter-lua"
       "editor-stats"
-      "platformio-ide-terminal"
       "vim-modeline"
       "language-thrift"
       "language-puppet"
       "language-pegjs"
-      "language-groovy"
       "language-erlang"
       "language-batch"
+      "one-vibrancy"
+      "platformio-ide-terminal"
+      "linter-jenkins"
+      "teletype"
+      "local-settings"
+      "linter-ui-touchbar"
+      "atom-cfn-lint"
+      "blame"
+      "linter"
     ]
     packagesWithKeymapsDisabled: [
       "sort-lines"
     ]
     telemetryConsent: "no"
     themes: [
-      "one-dark-ui"
-      "city-lights-syntax"
+      "pristine-ui"
+      "atom-darkbox-syntax"
     ]
     titleBar: "custom"
+    uriHandlerRegistration: "always"
     warnOnLargeFileLimit: 20
   editor:
-    fontFamily: "Fira Code"
+    fontFamily: "SFMono Nerd Font"
     invisibles: {}
     scrollPastEnd: true
     showIndentGuide: true
     showInvisibles: true
+    tabLength: 4
   "editor-background":
     blurRadius: 0
     image:
@@ -124,6 +152,7 @@
     useAnimations: false
   "file-types":
     hosts$: "source.shell"
+    tmpl: "source.go"
   filesize:
     KibibyteRepresentation: false
   "find-and-replace":
@@ -131,10 +160,7 @@
   "go-config":
     gopath: "~/src/go"
   "go-debug":
-    configurationFile: [
-      ".atom/debug.json"
-    ]
-    dlvPath: "/opt/boxen/homebrew/bin/dlv"
+    dlvPath: "/usr/local/bin/dlv"
     panelInitialVisible: true
   "go-find-references":
     path: "/Users/josh/src/go/bin/go-find-references"
@@ -143,11 +169,12 @@
   "go-outline": {}
   "go-plus":
     autocomplete: {}
-    config: {}
+    config:
+      additionalBuildArgs: "-v -x"
     currentPanelHeight: "12.872657580919933vh"
     currentPanelWidth: "26.2890625vw"
-    goInstallation: "/opt/boxen/homebrew/bin/go"
-    goPath: "/Users/josh/src/go"
+    devMode: false
+    goInstallation: "/usr/local/bin/go"
     lint:
       args: [
         "--vendor"
@@ -173,7 +200,6 @@
       currentHeight: "19.41974730931212vh"
       currentWidth: "32.68229166666667vw"
       displayMode: "closed"
-      focusOnFailure: false
     panelDisplayMode: "closed"
     test:
       coverageDisplayMode: "gutter"
@@ -195,16 +221,16 @@
     highlightBackground: true
     lightTheme: true
   "hyperlink-hyperclick": {}
+  "ide-go":
+    diagnosticsEnabled: true
   "isotope-ui":
     backgroundColor: "false"
-    customBackgroundColorPicker:
-      alpha: 1
-      blue: 248
-      green: 254
-      red: 213
+    customBackgroundColorPicker: "#d5fef8"
     fontFamily: "Fira Sans"
     fontWeight: "Regular"
     minimalMode: true
+  jenkins:
+    url: "https://ci.ac.st"
   "jira-issue-search":
     jiraSearchUrl: "https://jira.acstechnologies.com"
   linter: {}
@@ -216,10 +242,15 @@
   "linter-spell": {}
   "linter-ui-default":
     decorateOnTreeView: "Files and Directories"
+    panelHeight: 300
+    panelRepresents: "Entire Project"
     showProviderName: true
+    statusBarPosition: "Right"
   "linter-ui-hinted":
     style: "background"
-  "linter-write-good": {}
+  "linter-write-good":
+    additionalArgs: "--no-passive"
+    severityLevel: "Warning"
   "markdown-preview":
     useGitHubStyle: true
   minimap:
@@ -250,6 +281,8 @@
   "one-dark-ui":
     tabSizing: "Even"
   "one-light-ui": {}
+  "one-vibrancy":
+    effect: "auto-opaque"
   "open-recent":
     maxRecentDirectories: 20
     maxRecentFiles: 20
@@ -275,20 +308,24 @@
         brightYellow: "#f3cf87"
     core: {}
     style:
-      fontFamily: "Droid Sans Mono Awesome"
+      fontFamily: "SFMono Nerd Font"
       fontSize: "12"
     toggles:
       autoClose: true
+  "pristine-ui": {}
   "project-view":
     displayPath: false
   "release-notes":
     viewedVersion: "0.95.0"
+  "seti-syntax":
+    themeColor: "Steel"
   "spell-check": {}
   "status-bar": {}
   tabs:
     alwaysShowTabBar: false
     enableVcsColoring: true
     usePreviewTabs: true
+  "terminal-tab": {}
   "tester-go":
     coverageHighlightMode: "disabled"
   "tool-bar":
@@ -311,3 +348,6 @@
 ".json.source":
   editor:
     tabLength: 4
+".source.yaml":
+  editor:
+    tabLength: 2
