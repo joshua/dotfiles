@@ -22,11 +22,14 @@
     envFile: ".atom/env"
     showNotificationOnError: true
   "atom-ide-ui":
+    "atom-ide-code-format":
+      formatOnSave: true
     "atom-ide-datatip":
       onlyTopDatatip: true
     "atom-ide-diagnostics-ui":
       autoVisibility: true
       showDiagnosticTraces: true
+      showDirectoryColumn: true
       useExperimentalUi: true
     "atom-ide-terminal":
       cursorBlink: true
@@ -50,6 +53,8 @@
       panelContrast: true
   "atom-package-deps":
     ignored: []
+  "atom-terminal":
+    app: "iTerm.app"
   "autocomplete-go":
     snippetMode: "nameAndType"
   "autocomplete-plus": {}
@@ -114,12 +119,11 @@
       "one-vibrancy"
       "platformio-ide-terminal"
       "linter-jenkins"
-      "teletype"
       "local-settings"
       "linter-ui-touchbar"
-      "atom-cfn-lint"
       "blame"
       "linter"
+      "ide-go"
     ]
     packagesWithKeymapsDisabled: [
       "sort-lines"
@@ -127,13 +131,13 @@
     telemetryConsent: "no"
     themes: [
       "pristine-ui"
-      "atom-darkbox-syntax"
+      "midnight-owl-syntax"
     ]
     titleBar: "custom"
     uriHandlerRegistration: "always"
     warnOnLargeFileLimit: 20
   editor:
-    fontFamily: "SFMono Nerd Font"
+    fontFamily: "Office Code Pro D"
     invisibles: {}
     scrollPastEnd: true
     showIndentGuide: true
@@ -174,6 +178,7 @@
     currentPanelHeight: "12.872657580919933vh"
     currentPanelWidth: "26.2890625vw"
     devMode: false
+    format: {}
     goInstallation: "/usr/local/bin/go"
     lint:
       args: [
@@ -242,7 +247,7 @@
   "linter-spell": {}
   "linter-ui-default":
     decorateOnTreeView: "Files and Directories"
-    panelHeight: 300
+    panelHeight: 238
     panelRepresents: "Entire Project"
     showProviderName: true
     statusBarPosition: "Right"
@@ -250,7 +255,6 @@
     style: "background"
   "linter-write-good":
     additionalArgs: "--no-passive"
-    severityLevel: "Warning"
   "markdown-preview":
     useGitHubStyle: true
   minimap:
@@ -286,6 +290,8 @@
   "open-recent":
     maxRecentDirectories: 20
     maxRecentFiles: 20
+  "open-terminal-here":
+    command: "open -a iTerm.app \"$PWD\""
   "package-sync":
     createOnChange: true
     forceOverwrite: true
@@ -322,7 +328,6 @@
   "spell-check": {}
   "status-bar": {}
   tabs:
-    alwaysShowTabBar: false
     enableVcsColoring: true
     usePreviewTabs: true
   "terminal-tab": {}
