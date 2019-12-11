@@ -1,5 +1,5 @@
-alias zcfg="atom ~/.zshrc"
-alias omz="atom ~/.oh-my-zsh"
+alias zcfg="${EDITOR} ~/.zshrc"
+alias omz="${EDITOR} ~/.oh-my-zsh"
 
 alias ll="ls -laFsh"
 
