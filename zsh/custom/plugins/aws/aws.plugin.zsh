@@ -20,3 +20,26 @@ function cfv {
   [[ -n "$1" && -r "$1" ]] || return 1;
   aws cloudformation validate-template --template-body file://$1 1>/dev/null
 }
+
+function aws-reset {
+    [[ -n "${1}" ]] || return 1;
+    p=$(aws secretsmanager get-random-password --password-length 20 --require-each-included-type --output text)
+    aws iam update-login-profile --user-name ${1} --password "${p}" --password-reset-required
+    if [ $? -eq 0 ]; then
+        payload="$(urlencode ${p})"
+        exp_days=3
+        exp_views=5
+        data="password%5Bpayload%5D=${payload}&password%5Bexpire_after_days%5D=3&password%5Bexpire_after_views%5D=5&password%5Bdeletable_by_viewer%5D=on&="
+        resp=$(curl -s --request POST \
+             --url 'https://pwpush.com/p.json' \
+             --header 'content-type: application/x-www-form-urlencoded' \
+             --header 'accept: text/html,application/xhtml+xml,application/xml' \
+             --data "${data}")
+        if [ $? -eq 0 ]; then
+            token=$(echo ${resp} | tr '\n' ' ' | jq -r '.url_token')
+            url="https://pwpush.com/p/${token}"
+            echo ${url} | pbcopy
+            echo ${url}
+        fi
+    fi
+}
