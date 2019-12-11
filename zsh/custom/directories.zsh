@@ -10,14 +10,15 @@ function hashdir() { hash -d $1=$2 && alias $1="nocorrect $1"; }
 
 hashdir src ~/src
 hashdir vnd ~src/vendor
+hashdir js ~src/acst/joshs
 hashdir legolab ~src/ACS/Lego/_lab
 
 hashdir gps $GOPATH/src
 hashdir ggh $GOPATH/src/github.com
 hashdir pg $GOPATH/src/p.go
-hashdir acst $GOPATH/src/ac.st
 
-hashdir golab $GOPATH/src/code.acs.tech/joshs/golab
+hashdir acst ~/src/github/acst
+hashdir golab ~/src/github/joshua/golab
 
 hashdir corp /Volumes/ACS/Corporate
 hashdir xfer /Volumes/ACS/Corporate/Transfer\ Location
