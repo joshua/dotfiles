@@ -4,7 +4,7 @@
   host = code.ac.st
 
 [user]
-	name = joshs
+	name = joshua
 	email = josh@acst.com
   signingkey = 3ED16A77
 
@@ -34,8 +34,8 @@
   untracked = cyan
 
 [core]
-  excludesfile = /opt/boxen/config/git/gitignore
-  editor = atom --wait
+	excludesfile = /Users/josh/.gitignore_global
+	editor = vim
 
 [apply]
   whitespace = nowarn
@@ -73,9 +73,16 @@
   diff = diff --word-diff
   dc   = diff --cached
 
+  ap   = add --patch
+  au   = add --update
+
   sl   = stash list
   sa   = stash apply
   ss   = stash save
+  ssu  = stash save -u # stash untracked files
+
+  amend  = commit --amend -c HEAD
+  amendc = commit --amend -C HEAD # reused commit message
 
   r    = reset
   r1   = reset HEAD^
@@ -83,6 +90,9 @@
   rh   = reset --hard
   rh1  = reset HEAD^ --hard
   rh2  = reset HEAD^^ --hard
+
+  fa = log --diff-filter=A --summary
+  fd = log --diff-filter=D --summary
 
   # List commits in short form, with colors and branch/tag annotations
   ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
@@ -141,5 +151,9 @@
 [pager]
   diff = diff-so-fancy | less --tabs=1,5 -R
   show = diff-so-fancy | less --tabs=1,5 -R
+
 [url "git@code.ac.st:"]
 	insteadOf = https://code.ac.st/
+
+[url "git@github.com:acst/"]
+	insteadOf = https://github.com/acst/
