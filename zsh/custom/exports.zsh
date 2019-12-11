@@ -6,8 +6,12 @@ export CPPFLAGS=-I/opt/X11/include
 # export CC=/usr/local/bin/gcc-4.2
 
 # Make atom the default editor
-export VISUAL='atom'
-export EDITOR='atom'
+# export VISUAL='atom'
+# export EDITOR='atom'
+
+# Make vscode the default editor
+export VISUAL='code'
+export EDITOR='code'
 
 # Prefer US English and use UTF-8.
 export LANG='en_US.UTF-8';
