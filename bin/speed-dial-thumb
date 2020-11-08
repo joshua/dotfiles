@@ -1,0 +1,73 @@
+#!/usr/local/bin/zsh
+set -e
+
+local _label _label_output _label_slug
+local -a opts
+
+zparseopts -D -E -A opts -- l::
+
+for opt in "${(k@)opts}"; do
+    case "${opt}" in
+        "-l" )
+            _label="${opts[-l]}"
+            _label_slug=$(echo ${_label} | iconv -t ascii//TRANSLIT | gsed -r "s/[^a-zA-Z0-9]+/-/g" | gsed -r "s/^-+\|-+$//g" | tr A-Z a-z)
+            _label_output="_${_label_slug}"
+            [[ -n "${_label}" ]] || { echo "a label must be provided" && return 1 }
+            ;;
+    esac
+done
+
+if [[ ! -f "${1}" ]]; then
+    echo "(${1}) is not a file"
+    exit 1
+fi
+
+local _file=${1}
+local _canvas=220x180
+local _thumbnail=64x64
+local _background=white
+local _extension=${_file##*.}
+local _output=${_file%.*}${_label_output}_thumbnail.${_extension}
+# local _label_font="/Users/josh/Library/Fonts/JetBrainsMono-Regular.ttf"
+# local _label_font="/Users/josh/Library/Fonts/FiraSans-SemiBold.otf"
+local _label_font="/Users/josh/Library/Fonts/MavenPro-Medium.ttf"
+
+local -a _args
+
+# default args for thumbnail
+_args=(
+    "-define jpeg:size=${_canvas}"
+    "-gravity center"
+    "-thumbnail ${_thumbnail}\^"
+    "-crop ${_canvas}+0+0\!"
+    "-background ${_background}"
+    # "-bordercolor blue -border 1"
+    "-append"
+    "-flatten"
+)
+
+# append a label if needed
+if [[ -n "${_label}" ]]; then
+    _args+=(
+        "-gravity South"
+        "\("
+            "-font ${_label_font}"
+            "-pointsize 18"
+            "-fill black"
+            "-background ${_background}"
+            "-draw 'text 0,10 \"${_label}\"'"
+        "\)"
+        # "-bordercolor red -border 1"
+    )
+fi
+
+# final args
+_args+=(
+    # "-bordercolor red -border 1"
+    "-append"
+    "-flatten"
+)
+
+_cmd="convert ${_file} ${_args[@]} ${_output}"
+eval ${_cmd}
+echo "created thumbnail (${_output})"
