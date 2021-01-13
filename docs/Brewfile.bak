@@ -1,4 +1,5 @@
 tap "aws/tap"
+tap "d12frosted/emacs-plus"
 tap "go-delve/delve"
 tap "heroku/brew"
 tap "hmarr/tap"
@@ -13,7 +14,6 @@ tap "homebrew/fuse"
 tap "homebrew/head-only"
 tap "homebrew/science"
 tap "warrensbox/tap"
-
 brew "ack"
 brew "ant"
 brew "archey"
@@ -211,14 +211,26 @@ cask "1password-cli"
 cask "amazon-drive"
 cask "amazon-music"
 cask "appcleaner"
+# cask "atom"
+# cask "atom-beta"
+# cask "azure-data-studio"
 cask "charles"
+# cask "clickup"
+# cask "couchbase-server-enterprise"
+# cask "cyberduck"
 cask "dash"
+# cask "dbeaver-community"
+# cask "discord"
 cask "diskwave"
 cask "docker"
+# cask "dropbox"
+# cask "electric-sheep"
+# cask "fantastical"
 cask "fing"
 cask "firefox"
 cask "firefoxdeveloperedition"
 cask "fontforge"
+# cask "fork"
 cask "gimp"
 cask "github"
 cask "google-chrome"
@@ -238,15 +250,21 @@ cask "keycastr"
 cask "mollyguard"
 cask "mplayerx"
 cask "mutify"
+# cask "muzzle"
 cask "ngrok"
+# cask "notion"
 cask "pock"
 cask "postgres"
 cask "postman"
 cask "powershell"
 cask "qlstephen"
+# cask "raindropio"
 cask "raspberry-pi-imager"
 cask "royal-tsx"
+# cask "signal"
 cask "slack"
+# cask "sony-ps4-remote-play"
+# cask "toggl"
 cask "transmit"
 cask "tunnelblick"
 cask "virtualbox"
@@ -269,7 +287,21 @@ mas "iPhoto", id: 408981381
 mas "Keynote", id: 409183694
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
+mas "Speedtest", id: 1153157709
 mas "StuffIt Expander", id: 405580712
 mas "Tailscale", id: 1475387142
+mas "Todoist", id: 585829637
+mas "Tot", id: 1491071483
+mas "Touch Pong", id: 1185339859
+mas "Twitter", id: 1482454543
 mas "Wake Up Time", id: 495945638
 mas "Xcode", id: 497799835
+
+
+
+
+brew untap homebrew/homebrew-binary
+brew untap homebrew/homebrew-dupes
+brew untap homebrew/homebrew-science
+brew untap homebrew/homebrew-head-only
+brew untap homebrew/homebrew-fuse
