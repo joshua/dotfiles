@@ -17,8 +17,8 @@ TRAPINT() {
 }
 
 # ensure we're on macOS 10.12 or higher
-macos::ensure_version "10.(12|13)" || {
-  log::panic "must be on macOS 10.12 or higher"
+macos::ensure_version "10.15" || {
+  log::panic "must be on macOS 10.15 or higher"
 }
 
 # ensure we're not running as root
