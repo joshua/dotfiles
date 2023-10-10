@@ -1,0 +1,9 @@
+# while x=1
+#   do airport -I \
+#     | grep CtlRSSI \
+#     | sed -e 's/^.*://g' \
+#     | xargs -I SIGNAL printf "\rWifi dBm: SIGNAL"
+#   sleep 0.5
+# done
+
+watch -n 1 airport -I

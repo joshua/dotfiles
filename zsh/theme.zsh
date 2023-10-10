@@ -81,7 +81,8 @@ prompt_my_cross() {
 
 POWERLEVEL9K_MODE='nerdfont-complete'
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(my_cross context dir vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status background_jobs my_go_version my_rbenv my_aws time)
+# POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status background_jobs my_go_version my_rbenv my_aws time)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status background_jobs my_go_version my_aws time)
 
 POWERLEVEL9K_CROSS_ICON="\uc001"
 

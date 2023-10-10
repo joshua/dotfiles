@@ -1,7 +1,7 @@
 export PATH="$HOME/.nodenv/shims:${PATH}"
 export NODENV_SHELL=zsh
 
-source '/usr/local/Cellar/nodenv/1.1.2/completions/nodenv.zsh'
+source '/usr/local/Cellar/nodenv/1.4.0/completions/nodenv.zsh'
 command nodenv rehash 2>/dev/null
 
 nodenv() {

@@ -1,0 +1,23 @@
+#!/usr/local/bin/zsh
+
+cols=(
+    "%(color:cyan) %(objectname:short)"
+    "%(color:magenta) %(refname:short)"
+    "%(color:magenta) %(upstream:short) %(color:red bold)%(upstream:track)%(color:no-bold)"
+    "%(color:yellow) %(authoremail:trim)"
+    "%(color:blue) %(contents:subject)"
+    "%(color:green italic) %(authordate:local)"
+    "%(color:green italic) (%(authordate:relative)) %(color:no-italic)"
+)
+
+fmt=${(j:||:)cols}
+fmt=$(echo "$fmt" | tr -d '\t' | tr -s ' ')
+
+# echo; echo "$fmt"; echo
+
+pattern="refs/heads"
+if [ -n "${1}" ]; then
+    pattern="refs/remotes/${1}"
+fi
+
+git for-each-ref --color=always --sort='-authordate' --format="$fmt" "${pattern}" | column -t -s'||'

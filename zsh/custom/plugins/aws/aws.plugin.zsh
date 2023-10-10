@@ -48,7 +48,8 @@ function ec2q {
     [[ -n "${1}" ]] || return 1;
 
     local output query remote user file
-    local -a options optuser pairs
+    local -a pairs
+    local -A options
 
     output="table"
     pairs=(
@@ -65,11 +66,11 @@ function ec2q {
     )
     query="Reservations[*].Instances[*].{${(j:,:)pairs}}"
 
+    zparseopts -D -E -A options -- t id ip 1 s:: rmt:: f::
+    
     # --filters "Name=instance-state-name,Values=running" "Name=tag:Name,Values=*${1}*" \
     # --filters "Name=tag:Name,Values=*${1}*" \
     filters="Name=tag:Name,Values=*${1}*"
-
-    zparseopts -D -E -A options -- t id ip 1 s:: rmt:: f::
 
     for opt in "${(k@)options}"; do
         case "${opt}" in
@@ -92,7 +93,7 @@ function ec2q {
                 ;;
             "-rmt" ) # print user@ip for each host with the given user name
                 remote=1
-                user="${options[-rmt]}"
+                user="${options}"
                 [[ -n "${user}" ]] || { echo "-u must be defined with -rmt" && return 1 }
                 output="text"
                 query="Reservations[*].Instances[*].[PrivateIpAddress]"

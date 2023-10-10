@@ -1,3 +1,5 @@
+# Fig pre block. Keep at the top of this file.
+# [[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
 
 zmodload zsh/zprof
 
@@ -19,7 +21,7 @@ for f ($DF/zsh/*.zsh) source $f
 plugins=(
   aws
   bc
-  dash
+  # dash
   # direnv
   docker
   # dotnet
@@ -27,7 +29,7 @@ plugins=(
   # extract
   # flamegraph
   fzf
-  gem
+  # gem
   git
   git2
   go
@@ -37,13 +39,15 @@ plugins=(
   homebrew
   iterm2
   # jira
-  k
-  kafka
+  # k
+  k8s
+  # kafka
   localrc
   # nerdfont
-  nodenv
-  ruby
-  slack-night-mode
+  # nodenv
+  rbenv
+  # ruby
+  # slack-night-mode
   # touchbar
   # vagrant
   # web-search
@@ -80,7 +84,10 @@ autoload -U compinit && compinit
 [ -L ~/.localrc ] && source ~/.localrc
 
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/josh/Downloads/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/josh/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+# if [ -f '/Users/josh/Downloads/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/josh/Downloads/google-cloud-sdk/path.zsh.inc'; fi
 
 # The next line enables shell command completion for gcloud.
-if [ -f '/Users/josh/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/josh/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+# if [ -f '/Users/josh/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/josh/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+
+# Fig post block. Keep at the bottom of this file.
+# [[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"

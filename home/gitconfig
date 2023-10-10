@@ -1,7 +1,12 @@
+[init]
+	defaultBranch = main
 
 [hub]
   protocol = https
   host = code.ac.st
+
+[github]
+  user = joshua
 
 [user]
 	name = joshua
@@ -43,8 +48,19 @@
 [mergetool]
   keepBackup = false
 
+[diff]
+  tool = difftastic
+
 [difftool]
   prompt = false
+
+[difftool "difftastic"]
+  cmd = difft "$LOCAL" "$REMOTE"
+
+[pager]
+  # difftool = true
+  diff = diff-so-fancy | less --tabs=1,5 -R
+  show = diff-so-fancy | less --tabs=1,5 -R
 
 [help]
   autocorrect = 1
@@ -52,17 +68,29 @@
 [push]
   # See `git help config` (search for push.default)
   # for more information on different options of the below setting.
+  # 
+  # https://git-scm.com/docs/git-config#Documentation/git-config.txt-pushdefault
   #
   # Setting to git 2.0 default to surpress warning message
-  default = simple
+  # default = simple
+  default = upstream
+
+  # Make `git push` push relevant annotated tags when pushing branches out.
+	followTags = true
+
+[filter "lfs"]
+  required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+
+[http]
+  cookiefile = /Users/josh/.gitcookies
 
 [alias]
   la = "!git config -l | grep alias | cut -c 7-"
-
-  promote = !$DF/bin/git-promote
-  wtf     = !$DF/bin/git-wtf
-  rank-contributers = !$DF/bin/git-rank-contributers
-  count   = !git shortlog -sn
+  
+  count = !git shortlog -sn
 
   co   = checkout
   cp   = cherry-pick
@@ -93,6 +121,9 @@
 
   fa = log --diff-filter=A --summary
   fd = log --diff-filter=D --summary
+
+  # View abbreviated SHA, description, and history graph of the latest 20 commits.
+	l = log --pretty=oneline -n 20 --graph --abbrev-commit
 
   # List commits in short form, with colors and branch/tag annotations
   ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
@@ -135,25 +166,73 @@
   # Search/grep your entire codebase for a string:
   grep = grep -Ii
   gr   = grep -Ii
+  
+  # pretty branch list
+  bl = branch-list
 
-[github]
-  user = joshua
+  # Switch to a branch, creating it if necessary.
+	go = "!f() { git checkout -b \"$1\" 2> /dev/null || git checkout \"$1\"; }; f"
 
-[filter "lfs"]
-  required = true
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
+  # Show verbose output about tags, branches or remotes
+	tags = tag -l
+	branches = branch --all
+	remotes = remote --verbose
 
-[http]
-  cookiefile = /Users/josh/.gitcookies
+	# List aliases.
+	aliases = config --get-regexp alias
 
-[pager]
-  diff = diff-so-fancy | less --tabs=1,5 -R
-  show = diff-so-fancy | less --tabs=1,5 -R
+	# Amend the currently staged files to the latest commit.
+	amend = commit --amend --reuse-message=HEAD
+
+  # Remove the old tag with this name and tag the latest commit with it.
+	retag = "!r() { git tag -d $1 && git push origin :refs/tags/$1 && git tag $1; }; r"
+
+  # Find branches containing commit
+	fb = "!f() { git branch -a --contains $1; }; f"
+
+	# Find tags containing commit
+	ft = "!f() { git describe --always --contains $1; }; f"
+
+	# Find commits by source code
+	fc = "!f() { git log --pretty=format:'%C(yellow)%h  %Cblue%ad  %Creset%s%Cgreen  [%cn] %Cred%d' --decorate --date=short -S$1; }; f"
+
+	# Find commits by commit message
+	fm = "!f() { git log --pretty=format:'%C(yellow)%h  %Cblue%ad  %Creset%s%Cgreen  [%cn] %Cred%d' --decorate --date=short --grep=$1; }; f"
+
+  # Remove branches that have already been merged with main.
+	# a.k.a. ‘delete merged’
+	dm = "!git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
+
+	# List contributors with number of commits.
+	contributors = shortlog --summary --numbered
+
+	# Show the user email for the current repository.
+	whoami = config user.email
+
+# URL shorthands
 
 [url "git@code.ac.st:"]
 	insteadOf = https://code.ac.st/
 
 [url "git@github.com:acst/"]
 	insteadOf = https://github.com/acst/
+
+[url "git@github.com:"]
+
+	insteadOf = "gh:"
+	pushInsteadOf = "github:"
+	pushInsteadOf = "git://github.com/"
+
+[url "git://github.com/"]
+
+	insteadOf = "github:"
+
+[url "git@gist.github.com:"]
+
+	insteadOf = "gst:"
+	pushInsteadOf = "gist:"
+	pushInsteadOf = "git://gist.github.com/"
+
+[url "git://gist.github.com/"]
+
+	insteadOf = "gist:"

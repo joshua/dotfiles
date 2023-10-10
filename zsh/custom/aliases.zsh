@@ -2,8 +2,8 @@ alias zcfg="${EDITOR} ~/.zshrc"
 alias omz="${EDITOR} ~/.oh-my-zsh"
 
 alias ll="ls -laFsh"
-alias k="k --no-vcs"
-alias kk="k -A --no-vcs"
+# alias k="k --no-vcs"
+# alias kk="k -A --no-vcs"
 
 alias c='clear'
 alias cll='clear && ll'
