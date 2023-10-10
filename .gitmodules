@@ -10,3 +10,6 @@
 [submodule "zsh/custom/plugins/flamegraph/FlameGraph"]
 	path = zsh/custom/plugins/flamegraph/FlameGraph
 	url = https://github.com/brendangregg/FlameGraph.git
+[submodule "home/hammerspoon/Spoons/Default/Spoons"]
+	path = home/hammerspoon/Spoons/Default/Spoons
+	url = https://github.com/Hammerspoon/Spoons
