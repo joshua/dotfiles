@@ -1,4 +1,4 @@
-export HOMEBREW_ROOT=/usr/local
+export HOMEBREW_ROOT=/opt/homebrew
 export HOMEBREW_CACHE=$HOME/Library/Caches/Homebrew
 
 export CFLAGS="-I$HOMEBREW_ROOT/include"

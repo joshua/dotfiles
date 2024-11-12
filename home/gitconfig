@@ -111,6 +111,11 @@
 
   amend  = commit --amend -c HEAD
   amendc = commit --amend -C HEAD # reused commit message
+  ac = commit --amend -C HEAD # reused commit message
+
+  pf = "!git push -f --set-upstream origin \"$(git rev-parse --abbrev-ref HEAD)\""
+
+  # up = "!git ac && git pf"
 
   r    = reset
   r1   = reset HEAD^
