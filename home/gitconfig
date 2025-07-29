@@ -1,20 +1,20 @@
 [init]
 	defaultBranch = main
 
-[hub]
-  protocol = https
-  host = code.ac.st
+# [hub]
+#   protocol = https
+#   host = code.ac.st
 
 [github]
   user = joshua
 
 [user]
 	name = joshua
-	email = josh@acst.com
-  signingkey = 3ED16A77
+	email = jsuggs@synergipartners.com
+  # signingkey = 3ED16A77
 
-[credential]
-  helper = /opt/boxen/bin/boxen-git-credential
+# [credential]
+#   helper = /opt/boxen/bin/boxen-git-credential
 
 [color]
   diff   = auto

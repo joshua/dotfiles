@@ -28,6 +28,7 @@ plugins=(
   encode64
   # extract
   # flamegraph
+  fnm
   fzf
   # gem
   git
@@ -45,7 +46,7 @@ plugins=(
   localrc
   # nerdfont
   # nodenv
-  rbenv
+  # rbenv
   # ruby
   # slack-night-mode
   # touchbar

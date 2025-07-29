@@ -1,0 +1,39 @@
+ips() {
+    ifconfig | gawk '
+    BEGIN {
+        max_iface_length = 10;  # Set the maximum width for interface name alignment
+        CYAN = "\033[36m";    # Color for interface name
+        GREEN = "\033[32m";   # Color for IP address
+        YELLOW = "\033[33m";  # Color for MAC address
+        RED_BOLD = "\033[1;31m"; # Color for the Aruba-friendly MAC
+        RESET = "\033[0m";    # Reset color
+    }
+    /^[a-z0-9]+:/ {
+        if (iface != "" && iface != "lo0" && ip != "N/A") {
+            # Convert standard MAC to Aruba-friendly format
+            gsub(":", "", mac);
+            aruba_mac = substr(mac, 1, 6) "-" substr(mac, 7);
+            printf "%s%*s%s: %s%-16s%s %s%-17s%s %s%s%s\n", CYAN, max_iface_length, iface, RESET, GREEN, ip, RESET, YELLOW, mac, RESET, RED_BOLD, aruba_mac, RESET;
+        }
+        match($1, /^([a-z0-9]+):/, arr);
+        iface = arr[1];
+        ip = "N/A";  # Reset IP and MAC for the new interface
+        mac = "N/A";
+    }
+    /inet / && !/inet6/ {
+        match($0, /inet ([0-9.]+)/, ipArr);
+        ip = ipArr[1];
+    }
+    /ether / {
+        match($0, /ether ([0-9a-f:]+)/, macArr);
+        mac = macArr[1];
+    }
+    END {
+        if (iface != "" && iface != "lo0" && ip != "N/A") {
+            # Convert standard MAC to Aruba-friendly format
+            gsub(":", "", mac);
+            aruba_mac = substr(mac, 1, 6) "-" substr(mac, 7);
+            printf "%s%*s%s: %s%-16s%s %s%-17s%s %s%s%s\n", CYAN, max_iface_length, iface, RESET, GREEN, ip, RESET, YELLOW, mac, RESET, RED_BOLD, aruba_mac, RESET;
+        }
+    }'
+}

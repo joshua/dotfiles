@@ -1,0 +1,193 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json
+
+final_space: true
+version: 3
+blocks:
+  - type: prompt
+    alignment: left
+    segments:
+      - type: text
+        style: powerline
+
+        # powerline_symbol: "\ue0b0"
+        background: "#ffffff"
+        foreground: "#100e23"
+
+        powerline_symbol: ""
+        # invert_powerline: false
+        # foreground: "#000000"
+        # background: "#fffb38"
+
+        template: " 󰥓 "
+
+      - type: path
+        style: powerline
+        powerline_symbol: ""
+        invert_powerline": false
+        background: "#91ddff"
+        foreground: "#100e23"
+        template: " {{ .Path }} "
+        properties:
+          style: "agnoster_full"
+          folder_icon: "\uf115"
+          folder_separator_icon: " \ue0b1 "
+          home_icon: "\ueb06"
+          mapped_locations:
+            "~/src/github/joshua/*": " joshua"
+
+      - type: git
+        style: "powerline"
+        powerline_symbol: ""
+        background: "#95ffa4"
+        foreground: "#193549"
+        # template: " {{ .HEAD }} "
+        properties":
+          display_status: true
+          display_stash_count: true
+          display_upstream_icon: true
+
+  - type: prompt
+    alignment: left
+    newline: true
+    segments:
+      - type: text
+        style: powerline
+        background: "#ffffff"
+        foreground: "#100e23"
+        powerline_symbol: ""
+        template: " 󰥓 "
+
+      - type: path
+        style: powerline
+        powerline_symbol: ""
+        invert_powerline": false
+        background: "#91ddff"
+        foreground: "#100e23"
+        template: " {{ .Path }} "
+        properties:
+          style: "agnoster"
+          folder_icon: "\uf115"
+          folder_separator_icon: " \ue0b1 "
+          home_icon: "\ueb06"
+          mapped_locations:
+            "~/src/github/joshua/*": " joshua"
+
+  - type: prompt
+    alignment: left
+    newline: true
+    segments:
+      - type: text
+        style: powerline
+        background: "#ffffff"
+        foreground: "#100e23"
+        powerline_symbol: ""
+        template: " 󰥓 "
+
+      - type: path
+        style: powerline
+        powerline_symbol: ""
+        invert_powerline": false
+        background: "#91ddff"
+        foreground: "#100e23"
+        template: " {{ .Path }} "
+        properties:
+          style: "agnoster_left"
+          folder_icon: "\uf115"
+          folder_separator_icon: " \ue0b1 "
+          home_icon: "\ueb06"
+          mapped_locations:
+            "~/src/github/joshua/*": " joshua"
+
+  - type: prompt
+    alignment: left
+    newline: true
+    segments:
+      - type: text
+        style: powerline
+        background: "#ffffff"
+        foreground: "#100e23"
+        powerline_symbol: ""
+        template: " 󰥓 "
+
+      - type: path
+        style: powerline
+        powerline_symbol: ""
+        invert_powerline": false
+        background: "#91ddff"
+        foreground: "#100e23"
+        template: " {{ .Path }} "
+        properties:
+          style: "agnoster_short"
+          folder_icon: "\uf115"
+          folder_separator_icon: " \ue0b1 "
+          home_icon: "\ueb06"
+          mapped_locations:
+            "~/src/github/joshua/*": " joshua"
+
+  - type: prompt
+    alignment: left
+    newline: true
+    segments:
+      - type: text
+        style: powerline
+        background: "#ffffff"
+        foreground: "#100e23"
+        powerline_symbol: ""
+        template: " 󰥓 "
+
+      - type: path
+        style: powerline
+        powerline_symbol: ""
+        invert_powerline": false
+        background: "#91ddff"
+        foreground: "#100e23"
+        template: " {{ .Path }} "
+        properties:
+          style: "mixed"
+          folder_icon: "\uf115"
+          folder_separator_icon: " \ue0b1 "
+          home_icon: "\ueb06"
+          mapped_locations:
+            "~/src/github/joshua/*": " joshua"
+
+  - type: rprompt
+    segments:
+      - type: status
+        style: diamond
+        leading_diamond: ""
+        trailing_diamond: ""
+        invert_powerline": true
+        foreground: "#ffffff"
+        background: "#00897b"
+        background_templates:
+          - "{{ if .Error }}red{{ end }}"
+        template: "{{ if eq .Code 0 }}  {{ else }}{{ if .Error }}{{.Code}}󰌑 {{ else }} {{ end }}{{ end }}"
+        properties:
+          always_enabled: true
+
+      # - type: go
+      #   style: diamond
+      #   leading_diamond: ""
+      #   trailing_diamond: ""
+      #   foreground: "#ffffff"
+      #   background: "#7FD5EA"
+      #   template: "  {{ .Full }} "
+
+      - type: time
+        style: diamond
+        leading_diamond: ""
+        trailing_diamond: ""
+        background: "black"
+        foreground: "249"
+        properties:
+          time_format: "15:04:05"
+        template: " {{ .CurrentDate | date .Format }}  "
+
+      - type: upgrade
+        style: diamond
+        leading_diamond: ""
+        trailing_diamond: ""
+        foreground: "black"
+        background: "yellow"
+        properties:
+          cache_duration: 168h

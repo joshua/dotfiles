@@ -1,5 +1,5 @@
 alias zcfg="${EDITOR} ~/.zshrc"
-alias omz="${EDITOR} ~/.oh-my-zsh"
+# alias omz="${EDITOR} ~/.oh-my-zsh"
 
 alias ll="ls -laFsh"
 # alias k="k --no-vcs"
@@ -21,7 +21,7 @@ alias timer='echo "Timer started. Stop with Ctrl-D." && date && time cat && date
 # IP addresses
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias localip="ipconfig getifaddr en0"
-alias ips="ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[0-9]\+\)\|[a-fA-F0-9:]\+\)' | awk '{ sub(/inet6? (addr:)? ?/, \"\"); print }'"
+# alias ips="ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[0-9]\+\)\|[a-fA-F0-9:]\+\)' | awk '{ sub(/inet6? (addr:)? ?/, \"\"); print }'"
 
 # Flush Directory Service cache
 alias flush="sudo dscacheutil -flushcache && sudo killall -HUP mDNSResponder"
@@ -76,6 +76,7 @@ alias pumpitup="osascript -e 'set volume output volume 100'"
 alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
 
 # Reload the shell (i.e. invoke as a login shell)
-alias reload="exec $SHELL -l"
+# alias reload="exec $SHELL -l"
+alias reload="omz reload"
 
 alias atom="code"

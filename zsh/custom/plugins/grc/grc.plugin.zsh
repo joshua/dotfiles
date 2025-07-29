@@ -5,4 +5,8 @@ if $(grc &>/dev/null) && ! $(brew &>/dev/null); then
   # grc causes issues with interactive prompts.
   # (docker -it, pprof, etc)
   # unalias make
+
+  make() {
+    grc --colour=auto make "$@"
+  }
 fi

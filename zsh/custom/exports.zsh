@@ -1,5 +1,5 @@
 # set SHELL to an absolute path
-export SHELL=/usr/local/bin/zsh
+export SHELL=/bin/zsh
 
 # Enable color
 export CLICOLOR=true
